@@ -35,7 +35,7 @@ export const Login = () => {
           </Link>
         </div>
       </div>
-      <div className="fixed bottom-5 ">
+      <div className="absolute bottom-5 ">
         <div className="text-xs">Developed by Team Berserkers</div>
       </div>
     </div>
