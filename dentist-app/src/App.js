@@ -10,7 +10,7 @@ import { Request } from "./Pages/Request";
 
 function App() {
   return (
-    <div className="App">
+    <div className="h-screen">
       <BrowserRouter>
         <Routes>
           <Route index element={<Home />} />
