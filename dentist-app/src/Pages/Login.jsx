@@ -31,7 +31,7 @@ export const Login = () => {
             </button>
           </div>
           <Link to="/signup" className="no-underline">
-            <div className="text-center">Данс байхгүй юу?</div>
+            <div className="text-center">Шинэ бүртгэл нээх</div>
           </Link>
         </div>
       </div>
