@@ -1,3 +1,7 @@
+import { useContext } from "react";
+import { AuthContext } from "../Providers";
+
 export const Home = () => {
-  return <div>HOme</div>;
+  const { userData } = useContext(AuthContext);
+  return <div>Snu {userData && userData.username}</div>;
 };
