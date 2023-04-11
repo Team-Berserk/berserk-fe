@@ -8,6 +8,7 @@ export const DataProvider = ({ children }) => {
   const getAllRequests = () => {
     instance.get("requests").then((res) => {
       console.log(res.data);
+      setAllRequests(res.data);
     });
   };
   const deleteRequest = (reqId) => {

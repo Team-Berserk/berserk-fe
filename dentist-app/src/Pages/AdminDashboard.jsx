@@ -1,9 +1,13 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Card } from "../Components/RequestCard";
+import { DataContext } from "../Providers/DataContext";
 
 export const Dashboard = () => {
+  const { allRequests } = useContext(DataContext);
   return (
     <div className="flex border-2 border-rose-500 h-screen">
+      {console.log(allRequests)}
       <div className="flex flex-col items-center w-96 h-20 border-2 border-teal-300 ">
         <h3 className="p-2.5 font-serif">LOGO (img)</h3>
         <div className="border-2 border-green-400 flex w-full h-full p-4">
@@ -21,17 +25,11 @@ export const Dashboard = () => {
         </div>
 
         <div className="overflow-y-scroll h-5/6 p-14 flex flex-wrap">
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
+          {allRequests &&
+            allRequests.map((req, index) => {
+              console.log(index);
+              return <Card {...req} key={index} />;
+            })}
         </div>
       </div>
     </div>
