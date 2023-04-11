@@ -9,6 +9,7 @@ import {
   Signup,
   Request,
 } from "./Pages";
+import { Dashboard } from "./Pages/AdminDashboard";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route index element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/profile/">
           <Route path=":id" element={<Profile />} />
         </Route>
