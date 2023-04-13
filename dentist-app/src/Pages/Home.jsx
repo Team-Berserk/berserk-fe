@@ -3,5 +3,6 @@ import { AuthContext } from "../Providers";
 
 export const Home = () => {
   const { userData } = useContext(AuthContext);
+  console.log(userData);
   return <div>Snu {userData && userData.username}</div>;
 };
