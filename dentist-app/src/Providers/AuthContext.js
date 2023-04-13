@@ -19,7 +19,7 @@ export const AuthProvider = ({ children }) => {
         if (response.data === "Token Required")
           return console.log("Why No Token!");
         setUserData(response.data);
-        console.log(response.data.username);
+        // console.log(response.data);
       });
   };
   useEffect(() => {
