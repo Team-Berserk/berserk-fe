@@ -1,6 +1,7 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { instance } from "../Clients";
 import { AuthContext } from "./AuthContext";
+import { toast } from "react-toastify";
 
 export const DataContext = createContext();
 
@@ -22,7 +23,7 @@ const doctorsData = [
     inpossibleTimes: [{ time: 13 }, { time: 16 }, { time: 19 }],
   },
   {
-    name: "Mnholovesnobody",
+    name: "MnhoTheStikman",
     inpossibleTimes: [{ time: 12 }, { time: 18 }],
   },
 ];
@@ -36,6 +37,15 @@ export const DataProvider = ({ children }) => {
     Dentist: null,
     Author: null,
   });
+
+  const Confitrm = () => {
+    toast.success("Confirmed!", {
+      position: toast.POSITION.TOP_CENTER,
+      hideProgressBar: true,
+      closeOnClick: true,
+      autoClose: 1000,
+    });
+  };
 
   const getAllRequests = () => {
     instance.get("requests").then((res) => {
@@ -57,6 +67,8 @@ export const DataProvider = ({ children }) => {
         Dentist: appointment.Dentist,
       })
       .then((res) => {
+        setAllRequests([...allRequests, res.data]);
+        Confitrm();
         console.log(res.data);
       });
   };

@@ -7,7 +7,7 @@ export const CalendarComp = () => {
   const { setAppointment } = useContext(DataContext);
 
   return (
-    <div className="flex items-center justify-center flex-col">
+    <div>
       <Calendar
         minDate={new Date()}
         view="month"

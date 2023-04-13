@@ -10,11 +10,13 @@ import {
   Signup,
 } from "./Pages";
 import { Dashboard } from "./Pages/AdminDashboard";
+import { ToastContainer } from "react-toastify";
 import { OTP } from "./Pages/OTP";
 
 function App() {
   return (
     <div className="h-screen">
+      <ToastContainer />
       <Routes>
         <Route index element={<Home />} />
         <Route path="/login" element={<Login />} />

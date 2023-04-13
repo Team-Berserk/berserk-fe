@@ -22,19 +22,19 @@ export const Hours = () => {
     <div className="flex flex-col">
       {hourData.map((item, index) => {
         return (
-          <div key={index}>
-            <button
-              onClick={() => {
-                item.possible = !item.possible;
-                setAppointment((prev) => ({
-                  ...prev,
-                  Hour: item.hour + ":00",
-                }));
-              }}
-            >
-              {item.hour + ":00"}
-            </button>
-          </div>
+          <button
+            key={index}
+
+            onClick={() => {
+              item.possible = !item.possible;
+              setAppointment((prev) => ({
+                ...prev,
+                Hour: item.hour + ":00",
+              }));
+            }}
+          >
+            <div className="border-2 border-teal-500 p-2 active:bg-teal-700">{item.hour + ":00"}</div>
+          </button>
         );
       })}
     </div>
