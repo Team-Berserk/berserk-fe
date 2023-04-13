@@ -3,15 +3,16 @@ import { Route, Routes } from "react-router-dom";
 import {
   Appointment,
   ClinicInfo,
+  Dashboard,
   DoctorProfile,
   Home,
   Login,
+  OTP,
   Profile,
   Signup,
 } from "./Pages";
-import { Dashboard } from "./Pages/AdminDashboard";
+
 import { ToastContainer } from "react-toastify";
-import { OTP } from "./Pages/OTP";
 
 function App() {
   return (
@@ -23,7 +24,7 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/appointment" element={<Appointment />} />
-        {/* <Route path="/verification" element={<OTP />} /> */}
+        <Route path="/verification" element={<OTP />} />
         <Route path="/profile/">
           <Route path=":id" element={<Profile />} />
         </Route>
