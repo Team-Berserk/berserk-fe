@@ -6,12 +6,14 @@ import { AuthContext } from "../Providers";
 
 export const Signup = () => {
   const [username, setUsername] = useState("");
+  const [surname, setSurname] = useState("");
   const [password, setPassword] = useState("");
   const { verifyToken, Navigator } = useContext(AuthContext);
 
   const onSubmit = () => {
     instance
       .post("/signup", {
+        surname,
         username,
         password,
       })
@@ -36,9 +38,10 @@ export const Signup = () => {
           </div>
           <h1 className="text-center text-lg">Бүртгүүлэх</h1>
           <div className="flex flex-col h-fit w-72 md:w-80">
-            <h5 className="text-base md:text-lg">Имэйл</h5>
+            <h5 className="text-base md:text-lg">Oвог нэр</h5>
             <input
-              placeholder="Имэйл"
+              placeholder="Oвог нэр"
+              onChange={(e) => setSurname(e.target.value)}
               className="border-2 rounded-2xl p-2.5 outline-none focus:ring"
             />
             <h5 className="text-base md:text-lg">Хэрэглэгчийн нэр</h5>

@@ -49,7 +49,8 @@ export const OTP = () => {
     window.confirmationResult
       .confirm(otp)
       .then(async (res) => {
-        console.log(res);
+        console.log(res.user.phoneNumber);
+        window.localStorage.setItem("phoneNumber", res.user.phoneNumber);
         nav("/");
       })
       .catch((err) => {

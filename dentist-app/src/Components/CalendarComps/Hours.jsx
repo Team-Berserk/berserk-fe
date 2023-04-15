@@ -12,7 +12,6 @@ const hourData = [
   { hour: 17, possible: true },
   { hour: 18, possible: true },
   { hour: 19, possible: false },
-  { hour: 20, possible: true },
 ];
 
 export const Hours = () => {
@@ -24,7 +23,6 @@ export const Hours = () => {
         return (
           <button
             key={index}
-
             onClick={() => {
               item.possible = !item.possible;
               setAppointment((prev) => ({
@@ -33,7 +31,9 @@ export const Hours = () => {
               }));
             }}
           >
-            <div className="border-2 border-teal-500 p-2 active:bg-teal-700">{item.hour + ":00"}</div>
+            <div className="border-2 border-teal-500 p-2 active:bg-teal-700">
+              {item.hour + ":00"}
+            </div>
           </button>
         );
       })}
