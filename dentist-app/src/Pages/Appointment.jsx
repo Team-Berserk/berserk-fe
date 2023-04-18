@@ -13,7 +13,7 @@ export const Appointment = () => {
   }, [appointment]);
 
   return (
-    <div className="flex flex-col justify-center items-center h-screen border-2 border-rose-500">
+    <div className="flex flex-col justify-center items-center h-screen">
       <CalendarComp appointment={appointment} />
       {appointment.Date && <Doctors />}
       {appointment.Dentist && <Hours />}
