@@ -17,10 +17,12 @@ export const Card = ({ Date, Hour, Author, Dentist, _id }) => {
     <div className="p-3">
       <div className="w-72 border-2 rounded">
         <div className="cardDesign">
-          <div className="cardInner">User: {Author.username}</div>
+          <div className="cardInner">User: {Author && Author.username}</div>
           <div className="cardInner">Date: {Date && Date}</div>
-          <div className="cardInner text-gray-400">Dentist: {Dentist}</div>
-          <div className="cardInner text-gray-400">Hour: {Hour}</div>
+          <div className="cardInner text-gray-400">
+            Dentist: {Dentist && Dentist}
+          </div>
+          <div className="cardInner text-gray-400">Hour: {Hour && Hour}</div>
           <div className="flex flex-col gap-2 m-2">
             <button className="border-2 border-teal-400 rounded  hover:bg-teal-300">
               Approve

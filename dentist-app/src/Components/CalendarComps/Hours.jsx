@@ -18,7 +18,7 @@ export const Hours = () => {
   const { setAppointment } = useContext(DataContext);
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-wrap p-4 gap-2 justify-center">
       {hourData.map((item, index) => {
         return (
           <button

@@ -1,32 +1,25 @@
 import { useContext } from "react";
 import { Card } from "../Components/RequestCard";
 import { DataContext } from "../Providers/DataContext";
-import { AuthContext } from "../Providers";
+import { Link } from "react-router-dom";
 
 export const Dashboard = () => {
   const { allRequests } = useContext(DataContext);
-  const { userData } = useContext(AuthContext);
   return (
-    <div className="flex border-2 border-rose-500 h-screen">
-      {console.log(allRequests)}
-      <div className="flex flex-col items-center w-96 h-20 border-2 border-teal-300 justify-center">
-        <h3 className="p-2.5 font-serif">LOGO (img)</h3>
+    <div className="flex flex-col border-2 border-rose-500 h-screen justify-center items-center">
+      <div>
+        <h1>Requests:</h1>
+        <Link to="/appointment">
+          <button className="border-2 p-2 rounded-md border-green-500 text-black hover:bg-green-400 active:bg-green-700">
+            Create Request
+          </button>
+        </Link>
       </div>
-      <div className="w-screen">
-        <div className="flex items-center justify-between border-2 shadow-sm w-full p-2 h-20">
-          <h3 className="m-1 font-serif">Requests</h3>
-          <div className="flex items-center border-2 border-black rounded-4 h-8 px-3">
-            <div className="text-xl font-serif">
-              {userData && userData.username}
-            </div>
-          </div>
-        </div>
-        <div className="overflow-y-scroll p-14 flex flex-wrap">
-          {allRequests &&
-            allRequests.map((req, index) => {
-              return <Card {...req} key={index} />;
-            })}
-        </div>
+      <div className="overflow-hidden md:overflow-y-scroll  p-14 flex flex-col md:flex-row items-center">
+        {allRequests &&
+          allRequests.map((req, index) => {
+            return <Card {...req} key={index} />;
+          })}
       </div>
     </div>
   );
