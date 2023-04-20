@@ -33,10 +33,17 @@ export const DataProvider = ({ children }) => {
       autoClose: 1000,
     });
   };
+  const FuckedUp = () => {
+    toast.error("You fucked up bro!", {
+      position: toast.POSITION.TOP_CENTER,
+      hideProgressBar: true,
+      closeOnClick: true,
+      autoClose: 1000,
+    });
+  };
 
   const getAllRequests = () => {
     instance.get("requests").then((res) => {
-      // console.log(res.data);
       setAllRequests(res.data);
     });
   };
@@ -54,9 +61,13 @@ export const DataProvider = ({ children }) => {
         Dentist: appointment.Dentist,
       })
       .then((res) => {
-        setAllRequests([...allRequests, res.data]);
-        Confitrm();
-        console.log(res.data);
+        if (res.data.message === "177013") {
+          FuckedUp();
+        } else {
+          setAllRequests([...allRequests, res.data]);
+          Confitrm();
+          console.log(res.data);
+        }
       });
   };
 
