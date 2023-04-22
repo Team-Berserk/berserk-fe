@@ -9,7 +9,6 @@ export const Dashboard = () => {
   return (
     <div className="flex flex-col h-screen justify-center items-center">
       <div className="flex flex-col items-center w-screen p-3">
-        <h1>Requests:</h1>
         <Link to="/appointment">
           <button className="border-2 p-2 rounded-md border-green-500 text-black hover:bg-green-400 active:bg-green-700">
             Create Request

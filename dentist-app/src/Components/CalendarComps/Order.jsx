@@ -24,7 +24,7 @@ export const Order = () => {
         className="p-2 border-2 border-teal-700 active:bg-teal-950 rounded-md"
         onClick={requestAppointment}
       >
-        <Link to="/dashboard" className="text-black">
+        <Link to="/" className="text-black">
           Confirm
         </Link>
       </button>
