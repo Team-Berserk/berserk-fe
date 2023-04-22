@@ -7,16 +7,26 @@ export const DataContext = createContext();
 
 const doctorsData = [
   {
-    name: "Dentist 1",
+    name: "Enkhbayar Gansukh",
   },
 
   {
-    name: "Dentist 2",
+    name: "Oyunbayar Davaalhagva",
   },
 ];
 
 export const DataProvider = ({ children }) => {
   const [allRequests, setAllRequests] = useState();
+  const [availabletimes, setAvailabletimes] = useState([
+    { hour: "10:00", possible: true },
+    { hour: "11:00", possible: true },
+    { hour: "12:00", possible: true },
+    { hour: "13:00", possible: true },
+    { hour: "15:00", possible: true },
+    { hour: "16:00", possible: true },
+    { hour: "17:00", possible: true },
+    { hour: "18:00", possible: true },
+  ]);
   const { userData } = useContext(AuthContext);
   const [appointment, setAppointment] = useState({
     Date: null,
@@ -24,6 +34,29 @@ export const DataProvider = ({ children }) => {
     Dentist: null,
     Author: null,
   });
+  const checkAvailableTimes = (Date) => {
+    const times = [
+      { hour: "10:00", possible: true },
+      { hour: "11:00", possible: true },
+      { hour: "12:00", possible: true },
+      { hour: "13:00", possible: true },
+      { hour: "15:00", possible: true },
+      { hour: "16:00", possible: true },
+      { hour: "17:00", possible: true },
+      { hour: "18:00", possible: true },
+    ];
+    // console.log(availabletimes, "how");
+    instance.put("/availableTimes", { Date: Date }).then((res) => {
+      times.forEach((element, index) => {
+        if (res.data.includes(element.hour)) {
+          element.possible = false;
+          times[index].possible = false;
+        }
+      });
+      console.log(times);
+    });
+    setAvailabletimes(times);
+  };
 
   const Confitrm = () => {
     toast.success("Confirmed!", {
@@ -33,8 +66,8 @@ export const DataProvider = ({ children }) => {
       autoClose: 1000,
     });
   };
-  const Alert = () => {
-    toast.error("Time taken already!", {
+  const FuckedUp = () => {
+    toast.error("You fucked up bro!", {
       position: toast.POSITION.TOP_CENTER,
       hideProgressBar: true,
       closeOnClick: true,
@@ -62,11 +95,17 @@ export const DataProvider = ({ children }) => {
       })
       .then((res) => {
         if (res.data.message === "177013") {
-          Alert();
+          FuckedUp();
         } else {
           setAllRequests([...allRequests, res.data]);
           Confitrm();
           console.log(res.data);
+          setAppointment({
+            Date: null,
+            Hour: null,
+            Dentist: null,
+            Author: null,
+          });
         }
       });
   };
@@ -86,6 +125,9 @@ export const DataProvider = ({ children }) => {
         requestAppointment,
         appointment,
         setAppointment,
+        availabletimes,
+        setAvailabletimes,
+        checkAvailableTimes,
       }}
     >
       {children}
