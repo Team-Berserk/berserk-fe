@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 
 export const Dashboard = () => {
   const { allRequests } = useContext(DataContext);
+
   return (
     <div className="flex flex-col h-screen justify-center items-center">
       <div className="flex flex-col items-center w-screen p-3">

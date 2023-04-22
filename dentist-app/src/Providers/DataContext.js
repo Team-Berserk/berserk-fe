@@ -7,11 +7,11 @@ export const DataContext = createContext();
 
 const doctorsData = [
   {
-    name: "Justin Bieber",
+    name: "Dentist 1",
   },
 
   {
-    name: "Andrew Tate",
+    name: "Dentist 2",
   },
 ];
 
