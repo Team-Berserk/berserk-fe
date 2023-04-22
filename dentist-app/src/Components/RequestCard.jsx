@@ -24,9 +24,6 @@ export const Card = ({ Date, Hour, Author, Dentist, _id }) => {
           </div>
           <div className="cardInner text-gray-400">Hour: {Hour && Hour}</div>
           <div className="flex flex-col gap-2 m-2">
-            <button className="border-2 border-teal-400 rounded  hover:bg-teal-300">
-              Approve
-            </button>
             <button
               className="border-2 border-rose-400 rounded hover:bg-rose-300"
               onClick={deleteRequest}

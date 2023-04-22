@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Landing from "../Assets/dentl.avif";
 import { Header } from "../Components/Header";
 
@@ -18,9 +19,11 @@ export const Home = () => {
             industry. Lorem Ipsum has been the industry's standard dummy text
             ever since the 1500 specimen book.
           </div>
-          <button className="bg-sky-400 p-3 rounded-2xl text-white shadow-md w-32 active:bg-sky-600 hover:bg-sky-500">
-            Цаг захиалах
-          </button>
+          <Link to="/appointment">
+            <button className="bg-sky-400 p-3 rounded-2xl text-white shadow-md w-32 active:bg-sky-600 hover:bg-sky-500">
+              Цаг захиалах
+            </button>
+          </Link>
         </div>
         <div className="w-1/2 justify-center hidden lg:flex">
           <img src={Landing} />

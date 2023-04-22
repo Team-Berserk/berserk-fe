@@ -98,7 +98,6 @@ export const DataProvider = ({ children }) => {
           FuckedUp();
         } else {
           setAllRequests([...allRequests, res.data]);
-          Confitrm();
           console.log(res.data);
           setAppointment({
             Date: null,
@@ -128,6 +127,7 @@ export const DataProvider = ({ children }) => {
         availabletimes,
         setAvailabletimes,
         checkAvailableTimes,
+        Confitrm,
       }}
     >
       {children}
