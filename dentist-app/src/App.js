@@ -13,10 +13,12 @@ import {
 } from "./Pages";
 
 import { ToastContainer } from "react-toastify";
+import { Header } from "./Components/Header";
 
 function App() {
   return (
-    <div className="h-screen">
+    <div className="h-screen ">
+      <Header />
       <ToastContainer />
       <Routes>
         <Route index element={<Home />} />

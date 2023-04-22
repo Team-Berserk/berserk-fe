@@ -67,7 +67,7 @@ export const DataProvider = ({ children }) => {
     });
   };
   const FuckedUp = () => {
-    toast.error("Someone took it bruv!", {
+    toast.error("You fucked up bro!", {
       position: toast.POSITION.TOP_CENTER,
       hideProgressBar: true,
       closeOnClick: true,
