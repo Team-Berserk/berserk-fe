@@ -4,19 +4,19 @@ import { useContext } from "react";
 import { DataContext } from "../../Providers/DataContext";
 
 export const CalendarComp = () => {
-  const { setAppointment } = useContext(DataContext);
+  const { setAppointment, checkAvailableTimes } = useContext(DataContext);
 
   return (
     <div>
       <Calendar
         minDate={new Date()}
         view="month"
-        onClickDay={(date) =>
+        onClickDay={(date) => {
           setAppointment((item) => ({
-            ...item,
             Date: moment(date).format("YYYY-MM-DD"),
-          }))
-        }
+          }));
+          checkAvailableTimes(moment(date).format("YYYY-MM-DD"));
+        }}
       />
     </div>
   );

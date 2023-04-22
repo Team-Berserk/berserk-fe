@@ -1,38 +1,31 @@
 import { useContext } from "react";
 import { DataContext } from "../../Providers/DataContext";
 
-const hourData = [
-  { hour: 10, possible: false },
-  { hour: 11, possible: true },
-  { hour: 12, possible: true },
-  { hour: 13, possible: true },
-  { hour: 14, possible: true },
-  { hour: 15, possible: false },
-  { hour: 16, possible: true },
-  { hour: 17, possible: true },
-  { hour: 18, possible: true },
-  { hour: 19, possible: false },
-];
-
 export const Hours = () => {
-  const { setAppointment } = useContext(DataContext);
-
+  const { setAppointment, availabletimes } = useContext(DataContext);
+  console.log(availabletimes);
   return (
     <div className="flex flex-wrap p-4 gap-2 justify-center">
-      {hourData.map((item, index) => {
+      {availabletimes.map((item, index) => {
         return (
           <button
             key={index}
             onClick={() => {
-              item.possible = !item.possible;
+              if (!item.possible) return;
               setAppointment((prev) => ({
                 ...prev,
-                Hour: item.hour + ":00",
+                Hour: item.hour,
               }));
             }}
           >
-            <div className="border-2 border-teal-500 p-2 active:bg-teal-700">
-              {item.hour + ":00"}
+            <div
+              className={
+                item.possible
+                  ? "border-2 border-teal-500 p-2 active:bg-teal-700"
+                  : "bg-gray-400 border-2 border-teal-500 p-2"
+              }
+            >
+              {item.hour}
             </div>
           </button>
         );
