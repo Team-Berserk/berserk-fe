@@ -33,8 +33,8 @@ export const DataProvider = ({ children }) => {
       autoClose: 1000,
     });
   };
-  const FuckedUp = () => {
-    toast.error("You fucked up bro!", {
+  const Alert = () => {
+    toast.error("Time taken already!", {
       position: toast.POSITION.TOP_CENTER,
       hideProgressBar: true,
       closeOnClick: true,
@@ -62,7 +62,7 @@ export const DataProvider = ({ children }) => {
       })
       .then((res) => {
         if (res.data.message === "177013") {
-          FuckedUp();
+          Alert();
         } else {
           setAllRequests([...allRequests, res.data]);
           Confitrm();
