@@ -1,9 +1,9 @@
 import Landing from "../Assets/dentl.avif";
+import { Header } from "../Components/Header";
 
 export const Home = () => {
   return (
     <div>
-      {/* <Header/> */}
       <div className="flex border-2 border-rose-500 h-screen justify-evenly items-center">
         <div
           className="flex flex-col p-1 gap-2 font-medium text-sm lg:text-md"
