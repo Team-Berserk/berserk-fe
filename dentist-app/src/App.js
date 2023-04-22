@@ -16,7 +16,7 @@ import { ToastContainer } from "react-toastify";
 
 function App() {
   return (
-    <div className="h-screen">
+    <div className="h-screen ">
       <ToastContainer />
       <Routes>
         <Route index element={<Home />} />
