@@ -14,6 +14,8 @@ import {
 
 import { ToastContainer } from "react-toastify";
 import { Header } from "./Components/Header";
+import { Cards } from "./Components/Cards";
+import { DoctorCards } from "./Pages/DoctorCards";
 
 function App() {
   return (
@@ -30,7 +32,7 @@ function App() {
         <Route path="/profile/">
           <Route path=":id" element={<Profile />} />
         </Route>
-        <Route path="/doctor/">
+        <Route path="/doctors/" element={<DoctorCards />}>
           <Route path=":id" element={<DoctorProfile />} />
         </Route>
         <Route path="/clinicInfo" element={<ClinicInfo />} />
