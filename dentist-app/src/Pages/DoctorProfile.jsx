@@ -40,7 +40,7 @@ export const DoctorProfile = () => {
           </div>
         </div>
         <div>
-          <img src={Pro} className="w-80 md:w-fit" />
+          <img src={Pro} className="w-80 md:w-fit" alt="img" />
         </div>
       </div>
       <div className="h-fit flex flex-col gap-32   justify-center">
@@ -60,10 +60,10 @@ export const DoctorProfile = () => {
             </div>
           </div>
         </div>
-        <div className="justify-evenly items-center font-light flex flex-col md:flex-row gap-3 md:gap-0">
+        <div className="justify-evenly items-center font-light flex flex-col md:flex-row gap-3 md:gap-0 py-5">
           <div className="text-4xl">WORKS</div>
-          <div className="text-sm flex flex-col md:flex-row gap-10 items-center w-80 md:w-1/2">
-            <img src={thumbnal} className="rounded w-24" />
+          <div className="text-sm flex flex-col md:flex-row gap-10 items-center w-96 md:w-1/2">
+            <img src={thumbnal} className="rounded w-24" alt="img" />
             <div className="flex flex-col gap-3 w-72 text-center items-center">
               <div className="text-3xl">Soddent Dentail Clinic</div>
               <div className="text-gray-400">

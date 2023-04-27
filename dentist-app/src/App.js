@@ -4,6 +4,7 @@ import {
   Appointment,
   ClinicInfo,
   Dashboard,
+  DoctorCards,
   DoctorProfile,
   Home,
   Login,
@@ -14,8 +15,7 @@ import {
 
 import { ToastContainer } from "react-toastify";
 import { Header } from "./Components/Header";
-import { Cards } from "./Components/Cards";
-import { DoctorCards } from "./Pages/DoctorCards";
+import { Footer } from "./Components/Footer";
 
 function App() {
   return (
@@ -38,6 +38,7 @@ function App() {
         </Route>
         <Route path="/clinicInfo" element={<ClinicInfo />} />
       </Routes>
+      <Footer />
     </div>
   );
 }
