@@ -1,14 +1,31 @@
+import { useEffect, useState } from "react";
 import Pro from "../Assets/Duure.svg";
 import thumbnal from "../Assets/thumbnail.svg";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import { instance } from "../Clients";
 
 export const DoctorProfile = () => {
+  const { id } = useParams();
+  const [dentist, setDentist] = useState([]);
+
+  useEffect(() => {
+    instance
+      .get(`/doctor/${id}`)
+      .then((res) => {
+        console.log(res.data);
+        setDentist(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  });
+
   return (
     <div className="flex flex-col">
-      <div className="h-screen flex flex-col-reverse md:flex-row justify-center items-center md:justify-around">
+      <div className="h-screen flex flex-col-reverse md:flex-row justify-evenly items-center md:justify-around">
         <div className="flex flex-col gap-4">
           <div className="flex flex-col gap-2">
-            <div className="text-5xl font-serif">Duurenbayar . O</div>
+            <div className="text-5xl font-serif">{dentist && dentist.Name}</div>
             <div className="text-gray-400 text-sm">
               delhiin shildeg shudnii emch boloh hun baigaa shuu
             </div>
@@ -30,36 +47,15 @@ export const DoctorProfile = () => {
         <div className="justify-evenly items-center flex flex-col md:flex-row gap-3 md:gap-0">
           <div className="font-light text-4xl">ABOUT</div>
           <div className="text-sm font-light md:text-md w-80 md:w-1/2">
-            Hey. Manii neriig Duuree gedeg uur yu ch yarihav dee. Sain uu
-            naizuudaa sain uu naizuudaa, Bugdeeree hamt togli sahilgagui
-            poorooroo. Luugiin undug. free pic ashiglaad suga yum be Munkhuu17
-            batsaanaa??!!
+            {dentist && dentist.About}
           </div>
         </div>
         <div className="justify-evenly items-center flex flex-col md:flex-row gap-3 md:gap-0">
           <div className="font-light text-4xl">SKILLS</div>
-          <div className="font-light text-lg flex flex-col w-80 md:w-1/2 items-center">
-            <div className="w-2/3">
+          <div className="font-light text-lg flex flex-col w-80 md:w-1/2">
+            <div className="flex gap-2 justify-center md:justify-normal">
               <div className="flex">
-                Surguuli:
-                <div className="flex gap-2 flex-col py-4">
-                  <div>1. Harvard</div>
-                  <div>2. Mvis</div>
-                </div>
-              </div>
-              <div className="flex w-full justify-center">
-                Chadwar:
-                <div className="flex gap-2 flex-col py-4">
-                  <div>1. Coding</div>
-                  <div>2. Scam art</div>
-                </div>
-              </div>
-              <div className="flex">
-                Awards:
-                <div className="flex gap-2 flex-col py-4">
-                  <div>1. Grammy</div>
-                  <div>2. 2x ballon'dor</div>
-                </div>
+                <div>{dentist && dentist.Skills}</div>
               </div>
             </div>
           </div>

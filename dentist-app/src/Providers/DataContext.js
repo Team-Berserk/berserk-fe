@@ -5,18 +5,9 @@ import { toast } from "react-toastify";
 
 export const DataContext = createContext();
 
-const doctorsData = [
-  {
-    name: "Enkhbayar Gansukh",
-  },
-
-  {
-    name: "Oyunbayar Davaalhagva",
-  },
-];
-
 export const DataProvider = ({ children }) => {
   const [allRequests, setAllRequests] = useState();
+  const [Doctors, setDoctors] = useState([]);
   const [availabletimes, setAvailabletimes] = useState([
     { hour: "10:00", possible: true },
     { hour: "11:00", possible: true },
@@ -109,8 +100,16 @@ export const DataProvider = ({ children }) => {
       });
   };
 
+  const getDoctors = () => {
+    instance.get("/doctors").then((res) => {
+      console.log(res.data);
+      setDoctors(res.data);
+    });
+  };
+
   useEffect(() => {
     getAllRequests();
+    getDoctors();
   }, []);
   return (
     <DataContext.Provider
@@ -120,7 +119,6 @@ export const DataProvider = ({ children }) => {
         setAllRequests,
         getAllRequests,
         deleteRequest,
-        doctorsData,
         requestAppointment,
         appointment,
         setAppointment,
@@ -128,6 +126,7 @@ export const DataProvider = ({ children }) => {
         setAvailabletimes,
         checkAvailableTimes,
         Confitrm,
+        Doctors,
       }}
     >
       {children}

@@ -4,6 +4,7 @@ import {
   Appointment,
   ClinicInfo,
   Dashboard,
+  DoctorCards,
   DoctorProfile,
   Home,
   Login,
@@ -31,7 +32,8 @@ function App() {
         <Route path="/profile/">
           <Route path=":id" element={<Profile />} />
         </Route>
-        <Route path="/doctors/">
+        <Route path="/doctors" element={<DoctorCards />} />
+        <Route path="/doctor/">
           <Route path=":id" element={<DoctorProfile />} />
         </Route>
         <Route path="/clinicInfo" element={<ClinicInfo />} />
