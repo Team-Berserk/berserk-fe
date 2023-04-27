@@ -14,6 +14,7 @@ import {
 
 import { ToastContainer } from "react-toastify";
 import { Header } from "./Components/Header";
+import { Footer } from "./Components/Footer";
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
         </Route>
         <Route path="/clinicInfo" element={<ClinicInfo />} />
       </Routes>
+      <Footer />
     </div>
   );
 }

@@ -2,7 +2,7 @@ import { FooterJSON } from "./json/FooterJSON";
 
 export const Footer = () => {
   return (
-    <div className="h-80 border-2 flex justify-center items-center">
+    <div className="border-2">
       <div className="flex w-full justify-evenly h-72">
         <div className="flex flex-col justify-evenly font-light">
           <div className="flex flex-col gap-3 w-96">
@@ -14,7 +14,7 @@ export const Footer = () => {
           </div>
           <div>LOGOS insta fabceovok link</div>
         </div>
-        <div className="flex gap-32 w-52 justify-center items-center">
+        <div className="flex flex-col lg:flex-row md:flex gap-32 w-52 justify-normal items-none lg:justify-center lg:items-center">
           <div className="flex flex-col gap-2">
             <h3>Products</h3>
             {FooterJSON.map((item, index) => {
