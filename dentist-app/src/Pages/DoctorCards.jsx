@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Cards } from "../Components/Cards";
 import { DataContext } from "../Providers";
+import { Footer } from "../Components/Footer";
 
 export const DoctorCards = () => {
   const { Doctors } = useContext(DataContext);

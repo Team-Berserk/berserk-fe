@@ -1,13 +1,13 @@
-import image from "../Assets/dentl.avif";
+import image from "../Assets/Duure.svg";
 import { Link } from "react-router-dom";
 
 export const Cards = ({ Name, _id }) => {
   return (
-    <div className="h-[400px] w-[300px] border-zinc-300 border-2 rounded-[35px] flex flex-col justify-center items-center m-3">
+    <div className="h-[400px] w-[300px] border-zinc-300 border-2 rounded-[35px] flex flex-col justify-center items-center m-3 shadow-md">
       <div className="h-auto justify-center items-center flex p-2">
         <img
           src={image}
-          className="w-32 h-32 rounded-full border-2 border-slate-600"
+          className="w-40 h-40 rounded-full border-2 border-slate-600"
         />
       </div>
       <div className="flex flex-col mx-6 gap-2">
