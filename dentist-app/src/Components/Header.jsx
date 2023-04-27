@@ -8,8 +8,8 @@ export const Header = () => {
   const { userData } = useContext(AuthContext);
 
   return (
-    <div className="h-20 flex items-center justify-normal lg:justify-around absolute top-0 w-screen">
-      <div className="flex p-1 gap-2 font-medium text-sm lg:text-md w-fit lg:w-2/3">
+    <div className="h-20 flex items-center justify-around absolute top-0 w-screen">
+      <div className="flex gap-4 font-medium w-fit lg:w-1/2">
         {HeaderJSON.map((item, index) => {
           return (
             <div className="text-lg font-normal p-1.5" key={index}>
