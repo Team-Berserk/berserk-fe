@@ -1,6 +1,7 @@
 import Pro from "../Assets/Duure.svg";
 import thumbnal from "../Assets/thumbnail.svg";
 import { Link } from "react-router-dom";
+import { Footer } from "../Components/Footer";
 
 export const DoctorProfile = () => {
   return (
@@ -64,7 +65,7 @@ export const DoctorProfile = () => {
             </div>
           </div>
         </div>
-        <div className="justify-evenly items-center font-light flex flex-col md:flex-row gap-3 md:gap-0">
+        <div className="justify-evenly items-center font-light flex flex-col md:flex-row gap-3 md:gap-0 py-5">
           <div className="text-4xl">WORKS</div>
           <div className="text-sm flex flex-col md:flex-row gap-10 items-center w-96 md:w-1/2">
             <img src={thumbnal} className="rounded w-24" />
@@ -77,6 +78,7 @@ export const DoctorProfile = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
