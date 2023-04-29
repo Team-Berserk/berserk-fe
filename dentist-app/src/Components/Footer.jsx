@@ -2,7 +2,7 @@ import { FooterJSON } from "./json/FooterJSON";
 
 export const Footer = () => {
   return (
-    <div className="flex w-full justify-evenly h-72 my-4">
+    <div className="flex w-full justify-evenly h-72 my-4 border">
       <div className="flex flex-col justify-evenly font-light">
         <div className="flex flex-col gap-3 w-96">
           <div className="text-3xl">[logo] Soddent Dentail Clinic</div>

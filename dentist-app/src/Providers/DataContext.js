@@ -102,7 +102,7 @@ export const DataProvider = ({ children }) => {
 
   const getDoctors = () => {
     instance.get("/doctors").then((res) => {
-      console.log(res.data);
+      // console.log(res.data);
       setDoctors(res.data);
     });
   };

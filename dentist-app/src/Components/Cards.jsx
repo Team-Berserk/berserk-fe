@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export const Cards = ({ Name, _id }) => {
   return (
-    <div className="h-[400px] w-[300px] border-zinc-300 border-2 rounded-[35px] flex flex-col justify-center items-center m-3 shadow-md">
+    <div className="h-[400px] w-[300px] rounded-[35px] flex flex-col items-center mx-3 shadow-xl opacity-80 hover:opacity-100 transition ease-in-out  hover:-translate-y-1 hover:scale-110">
       <div className="h-auto justify-center items-center flex p-2">
         <img
           src={image}
