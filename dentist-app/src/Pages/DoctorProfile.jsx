@@ -18,7 +18,7 @@ export const DoctorProfile = () => {
       .catch((err) => {
         console.log(err);
       });
-  });
+  }, []);
 
   return (
     <div className="flex flex-col">
