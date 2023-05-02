@@ -23,7 +23,7 @@ export const Signup = () => {
   };
 
   return (
-    <div className="flex flex-col p-28 justify-center items-center h-screen bg-teal-50">
+    <div className="flex flex-col p-28 justify-center items-center h-screen">
       <div className="rounded-2xl flex p-10 justify-center items-center gap-20 shadow-2xl bg-sky-50 w-80 md:w-fit">
         <div className="hidden md:block w-96">
           <img src={loginImg} alt="signupImg" className="rounded-2xl" />

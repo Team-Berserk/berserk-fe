@@ -7,7 +7,7 @@ export const DoctorCards = () => {
 
   return (
     <div className="h-screen flex justify-center items-center">
-      <div className="flex flex-col md:grid grid-cols-4 mt-40">
+      <div className="flex flex-col md:grid grid-cols-4 mt-24">
         {Doctors.map((item, index) => {
           return (
             <div className="m-4">
