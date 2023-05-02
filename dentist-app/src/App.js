@@ -19,7 +19,7 @@ import { Footer } from "./Components/Footer";
 
 function App() {
   return (
-    <div className="h-screen ">
+    <div className="h-screen">
       <Header />
       <ToastContainer />
       <Routes>
