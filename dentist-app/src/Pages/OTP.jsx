@@ -70,24 +70,25 @@ export const OTP = () => {
       .catch((err) => {
         console.log(err);
       });
-  };
+  }; 
+
   return (
     <div className="h-screen flex justify-center items-center">
       <div id="recaptcha-container"></div>
       {success ? (
-        <div className="border-2 border-rose-500 p-4 my-24 gap-2">
-          <h2>Enter ur OTP</h2>
+        <div className="border-2 border-rose-500 p-4 my-24 gap-2 flex flex-col items-center">
+          <h2 className="font-bold">Enter ur OTP</h2>
           <OtpInput
             OTPLength={6}
             otpType="number"
             disabled={false}
             value={otp}
             onChange={setOtp}
-            className="border-2 border-rose-500"
+            className="border-2 border-rose-500 m-2 pl-5"
           />
           <button
             onClick={onOTPVerify}
-            className="bg-sky-400 p-3 rounded-2xl text-white shadow-md w-32 active:bg-sky-600 hover:bg-sky-500"
+            className="bg-sky-400 p-3 rounded-2xl text-white shadow-md w-fit active:bg-sky-600 hover:bg-sky-500"
           >
             verify otp
           </button>
