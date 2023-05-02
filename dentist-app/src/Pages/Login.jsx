@@ -23,7 +23,7 @@ export const Login = () => {
   };
 
   return (
-    <div className="flex flex-col p-28 justify-center items-center h-screen bg-teal-50">
+    <div className="flex flex-col p-28 justify-center items-center h-screen">
       <div className="rounded-2xl flex p-10 justify-center items-center gap-20 shadow-2xl bg-sky-50 w-80 md:w-fit">
         <div className="hidden md:block w-96">
           <img src={loginImg} alt="loginImg" className="rounded-2xl" />
@@ -59,9 +59,6 @@ export const Login = () => {
             <div className="text-center">Шинэ бүртгэл нээх</div>
           </Link>
         </div>
-      </div>
-      <div className="absolute bottom-5 ">
-        <div className="text-xs">Developed by Team Berserkers</div>
       </div>
     </div>
   );
