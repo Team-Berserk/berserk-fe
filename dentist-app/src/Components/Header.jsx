@@ -13,19 +13,7 @@ export const Header = () => {
   function Menu(e) {
     console.log(e);
     setIsShowMenu(!isShowMenu);
-    // let list = document.querySelector("ul");
-
-    // if (e.name !== "menu") {
-    //   list.classList.add("top-[80px]");
-    //   list.classList.add("opacity-100");
-    // }
-    // e.name === "menu"
-    //   ? ((e.name = "close"),
-    //     list.classList.add("top-[80px]"),
-    //     list.classList.add("opacity-100"))
-    //   : ((e.name = "menu"),
-    //     list.classList.remove("top-[80px]"),
-    //     list.classList.remove("opacity-100"));
+   
   }
 
   return (
@@ -42,7 +30,6 @@ export const Header = () => {
             <RxHamburgerMenu name="menu" onClick={(e) => Menu(e)} />
           </span>
         </div>
-        {console.log(isShowMenu)}
         {!isShowMenu ? (
           <ul
             className={`md:flex md:items-center z-[100] md:z-auto md:static w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 md:opacity-100 top-[-400px] transition-all ease-in duration-500 bg-white`}
