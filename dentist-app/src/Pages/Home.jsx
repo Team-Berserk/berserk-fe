@@ -4,10 +4,7 @@ import Landing from "../Assets/dentl.avif";
 export const Home = () => {
   return (
     <div className="flex h-screen justify-evenly items-center">
-      <div
-        className="flex flex-col p-1 gap-2 font-medium text-sm lg:text-md"
-        style={{ width: "485px" }}
-      >
+      <div className="flex flex-col p-1 gap-2 font-medium text-sm lg:text-md w-96 lg:w-[485px]">
         <div className="text-5xl font-medium p-1">
           Хэнтий аймгийн хамгийн <span className="text-orange-400">гал</span>{" "}
           эмнэлэг
