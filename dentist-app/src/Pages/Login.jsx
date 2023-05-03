@@ -55,9 +55,11 @@ export const Login = () => {
               Нэвтрэх
             </button>
           </div>
-          <Link to="/signup" className="no-underline">
-            <div className="text-center">Шинэ бүртгэл нээх</div>
-          </Link>
+          <div className="flex justify-center">
+            <Link to="/signup" className="no-underline">
+              Шинэ бүртгэл нээх
+            </Link>
+          </div>
         </div>
       </div>
     </div>
