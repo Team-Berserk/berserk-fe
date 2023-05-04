@@ -1,5 +1,5 @@
 import { FooterJSON } from "./json/FooterJSON";
-import logo from "../Assets/SiteLogo.svg";
+import WebLogo from "../Assets/WebLogo.svg";
 
 export const Footer = () => {
   return (
@@ -7,7 +7,7 @@ export const Footer = () => {
       <div className="flex flex-col justify-evenly font-light py-4 md:p-0">
         <div className="flex flex-col gap-3 w-auto">
           <div className="text-2xl md:text-2xl flex w-auto gap-2">
-            <img src={logo} /> Soddent Dentail Clinic
+            <img src={WebLogo} alt="webLogo" /> Soddent Dentail Clinic
           </div>
           <div className="w-auto md:w-96">
             High level experience in web design and development knowledge,

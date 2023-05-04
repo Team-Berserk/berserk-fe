@@ -2,10 +2,7 @@ import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import {
   Appointment,
-  ClinicInfo,
   Dashboard,
-  DoctorCards,
-  DoctorProfile,
   Home,
   Login,
   OTP,
@@ -32,13 +29,8 @@ function App() {
         <Route path="/profile/">
           <Route path=":id" element={<Profile />} />
         </Route>
-        <Route path="/doctors" element={<DoctorCards />} />
-        <Route path="/doctor/">
-          <Route path=":id" element={<DoctorProfile />} />
-        </Route>
-        <Route path="/clinicInfo" element={<ClinicInfo />} />
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
