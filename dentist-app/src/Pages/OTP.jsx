@@ -23,38 +23,33 @@ export const OTP = () => {
     });
   };
 
-  const onCaptcha = () => {
-    if (!window.recaptchaVerifier) {
+  const onCaptcha = async () => {
+    if (!window?.recaptchaVerifier) {
       window.recaptchaVerifier = new RecaptchaVerifier(
         "recaptcha-container",
         {
           size: "invisible",
-          callback: (response) => {
-            onSignUp();
-          },
-          "expired-callback": () => {
-            console.log("gg");
-          },
+          callback: (response) => {},
         },
         auth
       );
     }
   };
 
-  const onSignUp = () => {
-    onCaptcha();
+  const onSignUp = async () => {
+    await onCaptcha();
     setSuccess(!success);
     const appVerifier = window.recaptchaVerifier;
     const phoneNumber = "+" + number;
 
-    signInWithPhoneNumber(auth, phoneNumber, appVerifier)
-      .then((confirmationResult) => {
-        window.confirmationResult = confirmationResult;
-        Sent();
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    const confirmationResult = await signInWithPhoneNumber(
+      auth,
+      phoneNumber,
+      appVerifier
+    );
+    Sent();
+    window.confirmationResult = confirmationResult;
+    return confirmationResult;
   };
 
   const onOTPVerify = () => {
@@ -62,7 +57,6 @@ export const OTP = () => {
       .confirm(otp)
       .then(async (res) => {
         console.log(res.user.phoneNumber);
-        window.localStorage.setItem("phoneNumber", res.user.phoneNumber);
         requestAppointment();
         Confitrm();
         nav("/");

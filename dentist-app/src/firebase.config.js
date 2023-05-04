@@ -2,13 +2,13 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBLgkuyqj17nu7GpIiO0MhqwovQ7qerIvs",
-  authDomain: "otp-test-16938.firebaseapp.com",
-  projectId: "otp-test-16938",
-  storageBucket: "otp-test-16938.appspot.com",
-  messagingSenderId: "938733556023",
-  appId: "1:938733556023:web:214fee9a09d5ab47a5cab2",
-  measurementId: "G-14YGNG2H1B",
+  apiKey: "AIzaSyAmyZDuZGwRB3rS2m_lghkvAjYZ3mfXKMM",
+  authDomain: "otptest-dd5c1.firebaseapp.com",
+  projectId: "otptest-dd5c1",
+  storageBucket: "otptest-dd5c1.appspot.com",
+  messagingSenderId: "981320924569",
+  appId: "1:981320924569:web:36460e3abc861064c0e708",
+  measurementId: "G-X3ZQ1C183V",
 };
 
 const app = initializeApp(firebaseConfig);
