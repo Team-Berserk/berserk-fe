@@ -55,9 +55,11 @@ export const Signup = () => {
               Бүртгүүлэх
             </button>
           </div>
-          <Link to="/login" className="no-underline">
-            <div className="text-center">Бүртгэлтэй юу?</div>
-          </Link>
+          <div className="flex justify-center">
+            <Link to="/login" className="no-underline">
+              Бүртгэлтэй юу?
+            </Link>
+          </div>
         </div>
       </div>
     </div>

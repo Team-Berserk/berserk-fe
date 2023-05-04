@@ -1,19 +1,22 @@
 import { FooterJSON } from "./json/FooterJSON";
+import logo from "../Assets/SiteLogo.svg";
 
 export const Footer = () => {
   return (
-    <div className="flex w-full justify-evenly h-72 my-4 bg-slate-50">
-      <div className="flex flex-col justify-evenly font-light">
-        <div className="flex flex-col gap-3 w-96">
-          <div className="text-3xl">[logo] Soddent Dentail Clinic</div>
-          <div>
+    <div className="flex flex-col w-full justify-evenly h-auto my-4 bg-slate-50 md:flex-row p-2 md:h-72">
+      <div className="flex flex-col justify-evenly font-light py-4 md:p-0">
+        <div className="flex flex-col gap-3 w-auto">
+          <div className="text-2xl md:text-2xl flex w-auto gap-2">
+            <img src={logo} /> Soddent Dentail Clinic
+          </div>
+          <div className="w-auto md:w-96">
             High level experience in web design and development knowledge,
             producing quality work.
           </div>
         </div>
-        <div>LOGOS insta fabceovok link</div>
+        <div className="my-3 md:m-0">LOGOS insta fabceovok link</div>
       </div>
-      <div className="flex flex-col lg:flex-row md:flex gap-32 w-fit justify-normal items-none lg:justify-center lg:items-center">
+      <div className="flex justify-center md:flex-row gap-10 py-5 md:p-0 md:items-center">
         <div className="flex flex-col gap-2">
           <h3>Products</h3>
           {FooterJSON.map((item, index) => {
