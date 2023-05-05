@@ -16,9 +16,9 @@ export const Header = () => {
   };
 
   return (
-    <div className="flex items-center justify-around absolute top-0 z-10 xl:border-b-[2px] xl:border-black w-screen bg-white">
-      <nav className="w-full p-5 xl:flex items-center justify-between mx-0 md:mx-32 ">
-        <div className="flex items-center justify-between">
+    <div className="flex absolute top-0 z-10 w-screen bg-white">
+      <nav className="w-full p-5 md:flex items-center justify-between mx-0 xl:mx-32 md:mx-1">
+        <div className="flex justify-between">
           <Link to="/">
             <img
               alt="Logo"
@@ -27,12 +27,12 @@ export const Header = () => {
             />
             <img alt="Logo" className="mx-3 block md:hidden" src={MobaLogo} />
           </Link>
-          <div className="text-3xl cursor-pointer block xl:hidden mx-2">
+          <div className="text-3xl cursor-pointer block md:hidden">
             <RxHamburgerMenu name="menu" onClick={Menu} />
           </div>
         </div>
         {!isShowMenu ? (
-          <div className="xl:flex xl:items-center w-full lg:w-auto xl:py-0 py-4 gap-3">
+          <div className="xl:flex xl:items-center w-full lg:w-auto xl:py-0 py-4 mx-3 gap-3">
             {HeaderJSON.map((item, index) => {
               return (
                 <div
@@ -45,30 +45,30 @@ export const Header = () => {
                 </div>
               );
             })}
-            <div
-              className="border bg-[#516EFF] rounded-md p-2 px-3 w-28 text-white font-semibold text-center"
-              onClick={Menu}
-            >
-              <Link to="/appointment">Цаг авах</Link>
-            </div>
+            <Link to="/appointment" onClick={Menu}>
+              <div className="border bg-[#516EFF] hover:bg-[#637DFF] rounded-md p-2 px-3 w-32 h-12 flex items-center justify-center text-white font-semibold">
+                Цаг авах
+              </div>
+            </Link>
           </div>
         ) : (
-          <div className="gap-5 font-medium w-fit border hidden xl:flex items-center">
+          <div className="gap-5 hidden md:flex items-center">
             {HeaderJSON.map((item, index) => {
               return (
-                <div
-                  className="text-xl font-normal p-1.5 hover:text-[#516EFF]"
-                  key={index}
-                >
+                <div className="p-1.5 hover:text-[#516EFF]" key={index}>
                   <Link to="/" className="no-underline">
-                    <div className="font-semibold">{item.name}</div>
+                    <div className="font-semibold text-md xl:text-xl">
+                      {item.name}
+                    </div>
                   </Link>
                 </div>
               );
             })}
-            <div className="border bg-[#516EFF] hover:bg-[#637DFF] rounded-md p-2 px-3 w-32 h-12 flex items-center justify-center text-white font-semibold">
-              <Link to="/appointment">Цаг авах</Link>
-            </div>
+            <Link to="/appointment">
+              <div className="border bg-[#516EFF] hover:bg-[#637DFF] text-sm xl:text-xl rounded-md p-2 px-3 xl:w-32 xl:h-12 flex items-center justify-center text-white font-semibold">
+                Цаг авах
+              </div>
+            </Link>
           </div>
         )}
       </nav>

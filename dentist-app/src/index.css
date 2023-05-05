@@ -9,4 +9,10 @@
   .cardInner {
     @apply mx-2;
   }
+  .ServiceCard {
+    @apply rounded-md bg-white text-black h-[88px] md:h-[160px] w-[97px] md:w-[176px] flex flex-col justify-center items-center;
+  }
+  .SpecailsCard {
+    @apply rounded-md bg-[#F8FAFC] text-black h-[240px] w-[284px] flex flex-col justify-center items-center border-2;
+  }
 }
