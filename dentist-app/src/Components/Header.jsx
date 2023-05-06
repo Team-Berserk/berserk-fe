@@ -1,4 +1,4 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { HeaderJSON } from "./json/HeaderJSON";
 import { useContext, useState } from "react";
 // import { AuthContext } from "../Providers/AuthContext";
@@ -7,7 +7,6 @@ import WebLogo from "../Assets/WebLogo.svg";
 import MobaLogo from "../Assets/MobaLogo.svg";
 
 export const Header = () => {
-  const path = useLocation();
   // const { userData } = useContext(AuthContext);
   const [isShowMenu, setIsShowMenu] = useState(true);
 

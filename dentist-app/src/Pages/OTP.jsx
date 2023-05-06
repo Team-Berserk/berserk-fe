@@ -67,7 +67,7 @@ export const OTP = () => {
   };
   return (
     <div className="h-screen flex justify-center items-center">
-      <div id="recaptcha-container"></div>
+      <div id="recaptcha-container" />
       {success ? (
         <div className="border-2 border-rose-500 p-4 my-24 gap-2">
           <h2>Enter ur OTP</h2>

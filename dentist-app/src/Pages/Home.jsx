@@ -7,7 +7,7 @@ import { StepsJSON } from "../Components/json/StepsJSON";
 export const Home = () => {
   return (
     <div className="snap-y snap-mandatory h-full overflow-y-scroll">
-      <div className="flex flex-col-reverse xl:flex-row h-full justify-evenly xl:justify-between px-6 xl:px-40 items-center py-32 xl:py-0">
+      <div className="flex flex-col-reverse xl:flex-row duration-500 h-full justify-evenly xl:justify-between px-6 xl:px-40 items-center py-32 xl:py-0">
         <div className="flex flex-col gap-5 mt-12 font-medium w-screen md:w-[500px] xl:w-[550px] items-center xl:items-start">
           <div className="text-5xl font-extrabold p-1 text-center xl:text-start">
             Хэнтий аймгийн хамгийн <span className="text-orange-400">гал</span>{" "}
