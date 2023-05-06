@@ -16,7 +16,7 @@ export const Header = () => {
 
   return (
     <div className="flex absolute top-0 z-10 w-screen bg-white">
-      <nav className="w-full p-5 md:flex items-center justify-between mx-0 xl:mx-32 md:mx-1">
+      <nav className="w-full p-5 md:flex items-center justify-between mx-0 xl:mx-32">
         <div className="flex justify-between">
           <Link to="/">
             <img
@@ -64,7 +64,7 @@ export const Header = () => {
               );
             })}
             <Link to="/appointment">
-              <div className="border bg-[#516EFF] hover:bg-[#637DFF] text-sm xl:text-xl rounded-md p-2 px-3 xl:w-32 xl:h-12 flex items-center justify-center text-white font-semibold">
+              <div className="border bg-[#516EFF] hover:bg-[#637DFF] rounded-md p-2 px-3 w-32 h-12 flex items-center justify-center text-white font-semibold">
                 Цаг авах
               </div>
             </Link>

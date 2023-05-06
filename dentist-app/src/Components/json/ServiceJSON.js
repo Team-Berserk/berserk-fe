@@ -19,8 +19,4 @@ export const ServiceJSON = [
     name: "Шүдний гажиг засал",
     icon: "icon",
   },
-  {
-    name: "Шүдний согог засал",
-    icon: "icon",
-  },
 ];
