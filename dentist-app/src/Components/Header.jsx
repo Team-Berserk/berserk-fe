@@ -10,11 +10,6 @@ export const Header = () => {
   const [isShowMenu, setIsShowMenu] = useState(true);
   const { service } = useContext(DataContext);
 
-  const scrollHandler = (elRef) => {
-    console.log(elRef.current.offsetTop);
-    window.scrollTo({ top: elRef.current.offsetTop, behavior: "smooth" });
-  };
-
   const Menu = () => {
     setIsShowMenu(!isShowMenu);
   };
@@ -61,10 +56,7 @@ export const Header = () => {
               return (
                 <div className="p-1.5 hover:text-[#516EFF]" key={index}>
                   <Link to="/" className="no-underline">
-                    <div
-                      className="font-semibold text-md xl:text-xl"
-                      onClick={() => scrollHandler(service)}
-                    >
+                    <div className="font-semibold text-md xl:text-xl">
                       {item.name}
                     </div>
                   </Link>

@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useRef, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { instance } from "../Clients";
 import { AuthContext } from "./AuthContext";
 import { toast } from "react-toastify";
@@ -8,7 +8,6 @@ export const DataContext = createContext();
 export const DataProvider = ({ children }) => {
   const [allRequests, setAllRequests] = useState();
   const [Doctors, setDoctors] = useState([]);
-  const service = useRef(null);
   const [availabletimes, setAvailabletimes] = useState([
     { hour: "10:00", possible: true },
     { hour: "11:00", possible: true },
@@ -115,7 +114,6 @@ export const DataProvider = ({ children }) => {
   return (
     <DataContext.Provider
       value={{
-        service,
         Navigator,
         allRequests,
         setAllRequests,

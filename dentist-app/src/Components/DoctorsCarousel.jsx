@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { DataContext } from "../Providers/DataContext";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 export const DoctorsCarousel = () => {
   const { Doctors } = useContext(DataContext);
