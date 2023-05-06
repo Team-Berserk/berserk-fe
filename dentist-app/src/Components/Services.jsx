@@ -1,8 +1,12 @@
+import { useContext } from "react";
 import { ServiceJSON } from "../Components/json/ServiceJSON";
+import { DataContext } from "../Providers/DataContext";
 
 export const Services = () => {
+  const { service } = useContext(DataContext);
+
   return (
-    <div className="flex xl:px-40 xl:py-10 h-fit xl:h-screen" id="service">
+    <div className="flex xl:px-40 xl:py-10 h-fit xl:h-screen" ref={service}>
       <div className="w-full flex flex-col gap-10">
         <div className="flex justify-between xl:border-[#BCBCBC] xl:border-b pb-7">
           <div className="flex flex-col gap-2 p-4 xl:p-0">

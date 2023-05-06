@@ -1,5 +1,6 @@
 import OtpInput from "otp-input-react";
-import PhoneInput from "react-phone-input-2";
+import "react-phone-number-input/style.css";
+import PhoneInput from "react-phone-number-input";
 import { useContext, useState } from "react";
 import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
@@ -90,7 +91,13 @@ export const OTP = () => {
         <div className="flex flex-col items-center gap-4 w-96">
           <h2 className="text-center">Enter ur phone number to confirm</h2>
           <div className="flex justify-center">
-            <PhoneInput country={"mn"} value={number} onChange={setNumber} />
+            <PhoneInput
+              defaultCountry="MN"
+              placeholder="Утасны дугаар оруулна yy."
+              value={number}
+              onChange={setNumber}
+              className="w-64"
+            />
           </div>
           <button
             onClick={onSignUp}

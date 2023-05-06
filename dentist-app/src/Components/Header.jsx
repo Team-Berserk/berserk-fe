@@ -1,14 +1,19 @@
 import { Link } from "react-router-dom";
 import { HeaderJSON } from "./json/HeaderJSON";
 import { useContext, useState } from "react";
-// import { AuthContext } from "../Providers/AuthContext";
 import { RxHamburgerMenu } from "react-icons/rx";
 import WebLogo from "../Assets/WebLogo.svg";
 import MobaLogo from "../Assets/MobaLogo.svg";
+import { DataContext } from "../Providers/DataContext";
 
 export const Header = () => {
-  // const { userData } = useContext(AuthContext);
   const [isShowMenu, setIsShowMenu] = useState(true);
+  const { service } = useContext(DataContext);
+
+  const scrollHandler = (elRef) => {
+    console.log(elRef.current.offsetTop);
+    window.scrollTo({ top: elRef.current.offsetTop, behavior: "smooth" });
+  };
 
   const Menu = () => {
     setIsShowMenu(!isShowMenu);
@@ -56,7 +61,10 @@ export const Header = () => {
               return (
                 <div className="p-1.5 hover:text-[#516EFF]" key={index}>
                   <Link to="/" className="no-underline">
-                    <div className="font-semibold text-md xl:text-xl">
+                    <div
+                      className="font-semibold text-md xl:text-xl"
+                      onClick={() => scrollHandler(service)}
+                    >
                       {item.name}
                     </div>
                   </Link>

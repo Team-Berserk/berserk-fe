@@ -17,7 +17,7 @@ export const Card = ({ Date, Hour, Author, Dentist, _id }) => {
     <div className="p-3">
       <div className="w-72 border-2 rounded">
         <div className="cardDesign">
-          <div className="cardInner">User: {Author && Author.username}</div>
+          <div className="cardInner">Author: {Author && Author.username}</div>
           <div className="cardInner">Date: {Date && Date}</div>
           <div className="cardInner text-gray-400">
             Dentist: {Dentist && Dentist}

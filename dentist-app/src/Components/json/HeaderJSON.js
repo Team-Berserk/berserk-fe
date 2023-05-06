@@ -1,15 +1,18 @@
 export const HeaderJSON = [
   {
     name: "Нүүр хуудас",
-    path: "",
+    path: "home",
   },
   {
     name: "Эмч",
+    path: "doctors",
   },
   {
     name: "Бидний тухай",
+    path: "aboutUs",
   },
   {
     name: "Үйлчилгээ",
+    path: "service",
   },
 ];
