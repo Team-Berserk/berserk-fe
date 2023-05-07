@@ -8,14 +8,13 @@ import { DataContext } from "../Providers/DataContext";
 
 export const Header = () => {
   const [isShowMenu, setIsShowMenu] = useState(true);
-  const { service } = useContext(DataContext);
 
   const Menu = () => {
     setIsShowMenu(!isShowMenu);
   };
 
   return (
-    <div className="flex absolute top-0 z-10 w-screen bg-white">
+    <div className="flex absolute top-0 z-10 w-screen bg-white ">
       <nav className="w-full p-5 md:flex items-center justify-between mx-0 xl:mx-32">
         <div className="flex justify-between">
           <Link to="/">
@@ -31,7 +30,7 @@ export const Header = () => {
           </div>
         </div>
         {!isShowMenu ? (
-          <div className="xl:flex xl:items-center w-full lg:w-auto xl:py-0 py-4 mx-3 gap-3">
+          <div className="xl:flex xl:items-center w-full lg:w-auto xl:py-0 py-4 mx-3 gap-3 transition-all duration-300">
             {HeaderJSON.map((item, index) => {
               return (
                 <div

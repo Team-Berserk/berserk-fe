@@ -12,6 +12,9 @@
   .PurpleButton {
     @apply border bg-[#516EFF] hover:bg-[#637DFF] active:bg-[#3859FF] border-none rounded-lg p-2 px-3 w-32 h-12 text-white font-semibold text-center;
   }
+  .DisabledButton {
+    @apply border bg-[#dddddd] border-none rounded-lg p-2 px-3 w-32 h-12 text-white font-semibold text-center;
+  }
   .ServiceCard {
     @apply rounded-md bg-white text-black h-[160px] w-[176px] flex flex-col justify-center items-center;
   }
@@ -19,6 +22,9 @@
     @apply rounded-md bg-[#F8FAFC] text-black h-[240px] w-[284px] flex flex-col justify-center items-center border-2;
   }
   .DoctorCard {
-    @apply rounded-md bg-[#F8FAFC] text-black h-[302px] w-[284px] flex flex-col justify-around items-center border-2;
+    @apply rounded-2xl bg-[#F8FAFC] text-black h-[362px] w-full md:w-80 justify-around items-center border-2 text-lg font-semibold xl:px-40 flex flex-col;
+  }
+  .AppointmentButton {
+    @apply hover:bg-[#EBEBEB] active:bg-[#DADADA] border-none rounded-3xl flex items-center p-8 w-44 md:w-fit h-12 text-black bg-white font-semibold text-center;
   }
 }
