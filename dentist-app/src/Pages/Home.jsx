@@ -1,12 +1,12 @@
-import { DoctorsCarousel } from "../Components/DoctorsCarousel";
 import {
+  AboutUs,
   AppointStep,
   AppointmentLanding,
+  DoctorsCarousel,
   Footer,
+  LandingPage,
   Services,
 } from "../Components";
-import { AboutUs } from "../Components/About-us";
-import { LandingPage } from "../Components/LandingPage";
 
 export const Home = () => {
   return (

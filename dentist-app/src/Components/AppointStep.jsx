@@ -15,7 +15,7 @@ export const AppointStep = () => {
         <div className="flex flex-wrap justify-center font-semibold text-lg pb-20 xl:pb-0 gap-10">
           {StepsJSON.map((item, index) => {
             return (
-              <div className="ServiceCard" key={index}>
+              <div className="ServiceCard text-center" key={index}>
                 <div>{item.icon}</div>
                 <div>{item.name}</div>
               </div>

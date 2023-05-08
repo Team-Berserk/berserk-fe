@@ -12,17 +12,18 @@ export const OTP = () => {
   const nav = useNavigate();
   const [otp, setOtp] = useState("");
   const [timer, setTimer] = useState(false);
-  const [seconds, setSeconds] = useState(30);
+  const [seconds, setSeconds] = useState(59);
   const [success, setSuccess] = useState(false);
-  const [phoneNumber, setPhoneNumber] = useState("");
-  const { Confitrm, requestAppointment } = useContext(DataContext);
+
+  const { Confitrm, requestAppointment, phoneNumber, setPhoneNumber } =
+    useContext(DataContext);
 
   useEffect(() => {
     const interval = setInterval(() => {
       if (seconds !== 0 && timer) {
         setSeconds(seconds - 1);
       } else {
-        setSeconds(30);
+        setSeconds(59);
         setTimer(false);
       }
     }, 1000);
@@ -87,7 +88,7 @@ export const OTP = () => {
 
   return (
     <div className="h-screen flex justify-center items-center">
-      <div id="recaptcha-container" />
+      <div id="recaptcha-container" style={{ display: "flex" }} />
       {success ? (
         <div className="flex flex-col justify-between h-96 items-center">
           <div className="flex flex-col items-center gap-4 w-96">
@@ -148,7 +149,7 @@ export const OTP = () => {
               <input
                 maxLength={8}
                 className="bg-gray-100 outline-none"
-                placeholder="Утасны дугаар"
+                placeholder="xxxxxxxx"
                 value={phoneNumber}
                 onChange={(e) => setPhoneNumber(e.target.value)}
               />
@@ -157,7 +158,7 @@ export const OTP = () => {
           <button
             onClick={onSignUp}
             className={`${
-              phoneNumber.length === 8
+              phoneNumber && phoneNumber.length === 8
                 ? "PurpleButton rounded-2xl"
                 : "DisabledButton rounded-2xl"
             }`}

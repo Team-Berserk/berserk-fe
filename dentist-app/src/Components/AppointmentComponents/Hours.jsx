@@ -2,10 +2,10 @@ import { useContext } from "react";
 import { DataContext } from "../../Providers/DataContext";
 
 export const Hours = () => {
-  const { setAppointment, availabletimes } = useContext(DataContext);
-  console.log(availabletimes);
+  const { availabletimes, setAppointment } = useContext(DataContext);
+
   return (
-    <div className="flex flex-wrap p-4 gap-2 justify-center">
+    <div className="flex flex-wrap w-[330px] h-14 overflow-hidden snap-y snap-mandatory overflow-y-scroll justify-center gap-5">
       {availabletimes.map((item, index) => {
         return (
           <button
@@ -17,12 +17,13 @@ export const Hours = () => {
                 Hour: item.hour,
               }));
             }}
+            disabled={!item.possible}
           >
             <div
               className={
                 item.possible
-                  ? "border-2 border-teal-500 p-2 active:bg-teal-700"
-                  : "bg-gray-400 border-2 border-teal-500 p-2"
+                  ? "border bg-[#516EFF] hover:bg-[#637DFF] rounded-md p-2 px-3 w-32 h-12 flex items-center justify-center text-white font-semibold snap-center"
+                  : "DisabledButton snap-center"
               }
             >
               {item.hour}

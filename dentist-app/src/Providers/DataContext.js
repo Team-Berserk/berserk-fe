@@ -6,8 +6,14 @@ import { toast } from "react-toastify";
 export const DataContext = createContext();
 
 export const DataProvider = ({ children }) => {
+  const { userData } = useContext(AuthContext);
   const [allRequests, setAllRequests] = useState();
+  const [surename, setSurename] = useState("");
+  const [ownername, setOwnername] = useState("");
+  const [registration, setRegistration] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
   const [Doctors, setDoctors] = useState([]);
+
   const [availabletimes, setAvailabletimes] = useState([
     { hour: "10:00", possible: true },
     { hour: "11:00", possible: true },
@@ -18,13 +24,17 @@ export const DataProvider = ({ children }) => {
     { hour: "17:00", possible: true },
     { hour: "18:00", possible: true },
   ]);
-  const { userData } = useContext(AuthContext);
+
   const [appointment, setAppointment] = useState({
     Date: null,
     Hour: null,
-    Dentist: null,
+    Ownername: null,
+    Surename: null,
     Author: null,
+    Phonenumber: null,
+    Registration: null,
   });
+
   const checkAvailableTimes = (Date) => {
     const times = [
       { hour: "10:00", possible: true },
@@ -36,7 +46,7 @@ export const DataProvider = ({ children }) => {
       { hour: "17:00", possible: true },
       { hour: "18:00", possible: true },
     ];
-    // console.log(availabletimes, "how");
+
     instance.put("/availableTimes", { Date: Date }).then((res) => {
       times.forEach((element, index) => {
         if (res.data.includes(element.hour)) {
@@ -57,6 +67,7 @@ export const DataProvider = ({ children }) => {
       autoClose: 1000,
     });
   };
+
   const FuckedUp = () => {
     toast.error("You fucked up bro!", {
       position: toast.POSITION.TOP_CENTER,
@@ -71,18 +82,23 @@ export const DataProvider = ({ children }) => {
       setAllRequests(res.data);
     });
   };
+
   const deleteRequest = (reqId) => {
     instance.delete("request/" + reqId).then(() => {
       console.log("gg bro");
     });
   };
+
   const requestAppointment = () => {
     instance
       .post("request", {
         Date: appointment.Date,
         Hour: appointment.Hour,
         Author: userData._id,
-        Dentist: appointment.Dentist,
+        Ownername: ownername,
+        Surename: surename,
+        Phonenumber: "+976" + phoneNumber,
+        Registration: registration,
       })
       .then((res) => {
         if (res.data.message === "177013") {
@@ -90,10 +106,13 @@ export const DataProvider = ({ children }) => {
         } else {
           setAllRequests([...allRequests, res.data]);
           console.log(res.data);
+          setOwnername("");
+          setSurename("");
+          setRegistration("");
+          setPhoneNumber("");
           setAppointment({
             Date: null,
             Hour: null,
-            Dentist: null,
             Author: null,
           });
         }
@@ -114,19 +133,27 @@ export const DataProvider = ({ children }) => {
   return (
     <DataContext.Provider
       value={{
+        Doctors,
+        surename,
+        Confitrm,
         Navigator,
-        allRequests,
-        setAllRequests,
-        getAllRequests,
-        deleteRequest,
-        requestAppointment,
+        ownername,
         appointment,
+        phoneNumber,
+        allRequests,
+        setSurename,
+        setOwnername,
+        registration,
+        deleteRequest,
+        getAllRequests,
+        setAllRequests,
         setAppointment,
         availabletimes,
+        setPhoneNumber,
+        setRegistration,
         setAvailabletimes,
+        requestAppointment,
         checkAvailableTimes,
-        Confitrm,
-        Doctors,
       }}
     >
       {children}

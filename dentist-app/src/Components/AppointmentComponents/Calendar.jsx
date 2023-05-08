@@ -5,8 +5,9 @@ import { DataContext } from "../../Providers/DataContext";
 import { useState } from "react";
 
 export const CalendarComp = () => {
-  const { setAppointment, checkAvailableTimes } = useContext(DataContext);
   const [selectedDay, setSelectedDay] = useState(null);
+  const { checkAvailableTimes, availabletimes, setAppointment } =
+    useContext(DataContext);
 
   const disabledDays = [
     {
@@ -42,7 +43,7 @@ export const CalendarComp = () => {
   };
 
   return (
-    <div>
+    <div className="flex flex-col gap-3">
       <Calendar
         value={selectedDay}
         onChange={(date) => onChange(date)}

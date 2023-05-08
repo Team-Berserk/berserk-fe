@@ -1,14 +1,14 @@
 export const StepsJSON = [
   {
-    name: "Цаг захиалах",
+    name: "Өдөр сонгох",
     icon: "icon",
   },
   {
-    name: "Өдөр, цаг сонгох",
+    name: "Цаг сонгох",
     icon: "icon",
   },
   {
-    name: "Эмчээ сонгох",
+    name: "Захиалгаа баталгaaжyyлax",
     icon: "icon",
   },
 ];

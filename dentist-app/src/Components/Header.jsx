@@ -1,10 +1,9 @@
 import { Link } from "react-router-dom";
 import { HeaderJSON } from "./json/HeaderJSON";
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
 import WebLogo from "../Assets/WebLogo.svg";
 import MobaLogo from "../Assets/MobaLogo.svg";
-import { DataContext } from "../Providers/DataContext";
 
 export const Header = () => {
   const [isShowMenu, setIsShowMenu] = useState(true);
@@ -14,18 +13,18 @@ export const Header = () => {
   };
 
   return (
-    <div className="flex absolute top-0 z-10 w-screen bg-white ">
-      <nav className="w-full p-5 md:flex items-center justify-between mx-0 xl:mx-32">
+    <div className="flex absolute top-0 z-50 w-screen bg-white">
+      <nav className="w-full p-5 lg:flex items-center justify-between mx-0 xl:mx-32">
         <div className="flex justify-between">
           <Link to="/">
             <img
               alt="Logo"
-              className="mx-3 w-40 hidden md:block"
+              className="mx-3 w-40 hidden lg:block"
               src={WebLogo}
             />
-            <img alt="Logo" className="mx-3 block md:hidden" src={MobaLogo} />
+            <img alt="Logo" className="mx-3 block lg:hidden" src={MobaLogo} />
           </Link>
-          <div className="text-3xl cursor-pointer block md:hidden">
+          <div className="text-3xl cursor-pointer block lg:hidden">
             <RxHamburgerMenu name="menu" onClick={Menu} />
           </div>
         </div>
@@ -50,7 +49,7 @@ export const Header = () => {
             </Link>
           </div>
         ) : (
-          <div className="gap-5 hidden md:flex items-center">
+          <div className="gap-5 hidden lg:flex items-center">
             {HeaderJSON.map((item, index) => {
               return (
                 <div className="p-1.5 hover:text-[#516EFF]" key={index}>
