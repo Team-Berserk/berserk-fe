@@ -1,5 +1,7 @@
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import { Header } from "./Components/Header";
 import {
   Appointment,
   Dashboard,
@@ -9,10 +11,6 @@ import {
   Profile,
   Signup,
 } from "./Pages";
-
-import { ToastContainer } from "react-toastify";
-import { Header } from "./Components/Header";
-import { Footer } from "./Components/Footer";
 
 function App() {
   return (
@@ -30,7 +28,6 @@ function App() {
           <Route path=":id" element={<Profile />} />
         </Route>
       </Routes>
-      {/* <Footer /> */}
     </div>
   );
 }
