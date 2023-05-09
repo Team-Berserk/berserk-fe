@@ -8,27 +8,17 @@ import {
 } from "../Components/AppointmentComponents";
 
 export const Appointment = () => {
-  const {
-    setAppointment,
-    setPhoneNumber,
-    surename,
-    ownername,
-    registration,
-    setOwnername,
-    setRegistration,
-    setSurename,
-    appointment,
-  } = useContext(DataContext);
+  const { setAppointment, appointment } = useContext(DataContext);
 
   const Cancel = () => {
-    setOwnername("");
-    setSurename("");
-    setRegistration("");
-    setPhoneNumber("");
     setAppointment({
-      Date: null,
-      Hour: null,
-      Author: null,
+      Date: "",
+      Hour: "",
+      Ownername: "",
+      Surename: "",
+      Author: "",
+      Phonenumber: "",
+      Registration: "",
     });
   };
 
@@ -63,13 +53,25 @@ export const Appointment = () => {
 
         <button
           className={
-            !registration || !ownername || !surename
+            !appointment.Registration ||
+            !appointment.Ownername ||
+            !appointment.Surename
               ? "DisabledButton"
               : "PurpleButton"
           }
-          disabled={!registration || !ownername || !surename}
+          disabled={
+            !appointment.Registration ||
+            !appointment.Ownername ||
+            !appointment.Surename
+          }
+          onClick={window.localStorage.setItem(
+            "request",
+            JSON.stringify(appointment)
+          )}
         >
-          {!registration || !ownername || !surename ? (
+          {!appointment.Registration ||
+          !appointment.Ownername ||
+          !appointment.Surename ? (
             <div>Confirm</div>
           ) : (
             <Link to="/verification">Confirm</Link>
