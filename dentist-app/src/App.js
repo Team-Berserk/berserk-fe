@@ -2,15 +2,7 @@ import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import { Header } from "./Components/Header";
-import {
-  Appointment,
-  Dashboard,
-  Home,
-  Login,
-  OTP,
-  Profile,
-  Signup,
-} from "./Pages";
+import { Appointment, Dashboard, Home, Login, OTP, Signup } from "./Pages";
 
 function App() {
   return (
@@ -24,9 +16,6 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/appointment" element={<Appointment />} />
         <Route path="/verification" element={<OTP />} />
-        <Route path="/profile/">
-          <Route path=":id" element={<Profile />} />
-        </Route>
       </Routes>
     </div>
   );

@@ -86,6 +86,16 @@ export const OTP = () => {
     }
   };
 
+  function isNumber(char) {
+    return !isNaN(parseFloat(char)) && isFinite(char);
+  }
+
+  const numberValidator = (e) => {
+    if (isNumber(e.target.value)) {
+      setPhoneNumber(e.target.value);
+    }
+  };
+
   return (
     <div className="h-screen flex justify-center items-center">
       <div id="recaptcha-container" style={{ display: "flex" }} />
@@ -151,7 +161,7 @@ export const OTP = () => {
                 className="bg-gray-100 outline-none"
                 placeholder="xxxxxxxx"
                 value={phoneNumber}
-                onChange={(e) => setPhoneNumber(e.target.value)}
+                onChange={numberValidator}
               />
             </div>
           </div>
