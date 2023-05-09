@@ -1,7 +1,7 @@
 export const HeaderJSON = [
   {
     name: "Нүүр хуудас",
-    path: "",
+    path: "home",
   },
   {
     name: "Эмч",
@@ -9,10 +9,10 @@ export const HeaderJSON = [
   },
   {
     name: "Бидний тухай",
-    path: "about-us",
+    path: "aboutUs",
   },
   {
-    name: "Цаг захиалах",
-    path: "appointment",
+    name: "Үйлчилгээ",
+    path: "service",
   },
 ];

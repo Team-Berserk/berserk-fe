@@ -8,7 +8,7 @@ const firebaseConfig = {
   storageBucket: "otptest-dd5c1.appspot.com",
   messagingSenderId: "981320924569",
   appId: "1:981320924569:web:36460e3abc861064c0e708",
-  measurementId: "G-X3ZQ1C183V",
+  measurementId: "G-X3ZQ1C183V"
 };
 
 const app = initializeApp(firebaseConfig);
