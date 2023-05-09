@@ -30,7 +30,7 @@ export const DoctorsCarousel = () => {
   return (
     <div className="h-fit md:h-screen flex bg-gray-100 xl:px-40 xl:py-28 ">
       <div className="w-full flex flex-col justify-evenly">
-        <div className="flex justify-between xl:border-[#BCBCBC] lg:border-b">
+        <div className="flex justify-between xl:border-[#BCBCBC] items-center lg:border-b">
           <div className="flex flex-col gap-2 p-4 xl:p-0">
             <div className="font-semibold text-3xl xl:text-6xl">
               Meet Some of Our
