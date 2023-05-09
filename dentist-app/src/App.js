@@ -19,8 +19,8 @@ function App() {
       <ToastContainer />
       <Routes>
         <Route index element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
+        <Route path="/supersecretpageonlyadmin6969" element={<Login />} />
+        <Route path="/dupersecretpageonlyadmin69" element={<Signup />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/appointment" element={<Appointment />} />
         <Route path="/verification" element={<OTP />} />
