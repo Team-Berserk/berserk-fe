@@ -5,8 +5,6 @@ export const Hours = () => {
   const { availabletimes, setAppointment, appointment } =
     useContext(DataContext);
 
-  // commit
-
   return (
     <div className="flex flex-wrap w-[330px] h-48 overflow-hidden snap-y snap-mandatory overflow-y-scroll justify-center gap-5">
       {availabletimes.map((item, index) => {
