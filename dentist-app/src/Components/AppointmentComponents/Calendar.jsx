@@ -36,7 +36,8 @@ export const CalendarComp = () => {
       }${date.day}`
     );
 
-    setAppointment(() => ({
+    setAppointment((prev) => ({
+      ...prev,
       Date: `${date.year}-${date.month < 10 ? "0" : ""}${date.month}-${
         date.day < 10 ? "0" : ""
       }${date.day}`,
