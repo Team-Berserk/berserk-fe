@@ -1,11 +1,19 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { DataContext } from "../../Providers/DataContext";
 
 export const Hours = () => {
-  const { availabletimes, setAppointment } = useContext(DataContext);
+  const { availabletimes, setAppointment, appointment } =
+    useContext(DataContext);
+
+  // useEffect(() => {
+  //   setAppointment((prev) => ({
+  //     ...prev,
+  //     Hour: "none",
+  //   }));
+  // });
 
   return (
-    <div className="flex flex-wrap w-[330px] h-14 overflow-hidden snap-y snap-mandatory overflow-y-scroll justify-center gap-5">
+    <div className="flex flex-wrap w-[330px] h-48 overflow-hidden snap-y snap-mandatory overflow-y-scroll justify-center gap-5">
       {availabletimes.map((item, index) => {
         return (
           <button
@@ -22,8 +30,10 @@ export const Hours = () => {
             <div
               className={
                 item.possible
-                  ? "border bg-[#516EFF] hover:bg-[#637DFF] rounded-md p-2 px-3 w-32 h-12 flex items-center justify-center text-white font-semibold snap-center"
-                  : "DisabledButton snap-center"
+                  ? appointment.Hour !== item.hour
+                    ? "HourButton snap-center"
+                    : "ChoosenHour snap-center"
+                  : "OccupiedHour snap-center"
               }
             >
               {item.hour}

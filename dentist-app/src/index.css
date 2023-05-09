@@ -10,7 +10,7 @@
     @apply border bg-[#516EFF] hover:bg-[#637DFF] active:bg-[#3859FF] border-none rounded-lg p-2 px-3 w-32 h-12 text-white font-semibold text-center;
   }
   .DisabledButton {
-    @apply border bg-[#dddddd] border-none rounded-lg p-2 px-3 w-32 h-12 text-white font-semibold text-center;
+    @apply border bg-[#dddddd] border-none rounded-lg p-2 px-3 w-32 h-12 text-white font-semibold text-center py-3;
   }
   .CancelButton {
     @apply border bg-rose-600 hover:bg-rose-500 active:bg-rose-700 border-none rounded-lg p-2 px-3 w-32 h-12 text-white font-semibold text-center;
@@ -26,5 +26,14 @@
   }
   .AppointmentButton {
     @apply hover:bg-[#EBEBEB] text-[#516EFF] active:bg-[#DADADA] border-none rounded-3xl flex items-center p-8 h-12 bg-white font-semibold text-center;
+  }
+  .HourButton {
+    @apply border bg-[#DAE0FF] hover:bg-[#637DFF] rounded-md p-2 px-3 w-32 h-12 flex items-center justify-center text-white font-semibold;
+  }
+  .ChoosenHour {
+    @apply border bg-[#516EFF] border-none rounded-md p-2 px-3 w-32 h-12 flex items-center justify-center text-white font-semibold;
+  }
+  .OccupiedHour {
+    @apply border bg-[#FC9999] border-none rounded-lg p-2 px-3 w-32 h-12 text-white font-semibold text-center  py-3;
   }
 }

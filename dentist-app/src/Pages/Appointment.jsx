@@ -17,6 +17,7 @@ export const Appointment = () => {
     setOwnername,
     setRegistration,
     setSurename,
+    appointment,
   } = useContext(DataContext);
 
   const Cancel = () => {
@@ -46,7 +47,7 @@ export const Appointment = () => {
       <div className="flex flex-col md:flex-row items-center md:justify-between w-80 md:w-[750px]">
         <div className="flex flex-col gap-3">
           <CalendarComp />
-          <Hours />
+          {appointment.Date && <Hours />}
         </div>
         <Information />
       </div>

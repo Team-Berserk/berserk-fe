@@ -47,14 +47,14 @@ export const DataProvider = ({ children }) => {
       { hour: "18:00", possible: true },
     ];
 
-    instance.put("/availableTimes", { Date: Date }).then((res) => {
+    instance.put("/availableTimes", { Date }).then((res) => {
       times.forEach((element, index) => {
         if (res.data.includes(element.hour)) {
           element.possible = false;
           times[index].possible = false;
         }
       });
-      console.log(times);
+      // console.log(times);
     });
     setAvailabletimes(times);
   };

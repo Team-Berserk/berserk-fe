@@ -1,7 +1,6 @@
 import "react-multi-carousel/lib/styles.css";
 import { useContext } from "react";
 import { DataContext } from "../Providers/DataContext";
-
 import Carousel from "react-multi-carousel";
 import { DoctorProfileCard } from "./DoctorPorfileCard";
 
