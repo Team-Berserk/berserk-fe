@@ -2,7 +2,7 @@ import { ServiceJSON } from "../Components/json/ServiceJSON";
 
 export const Services = () => {
   return (
-    <div className="flex xl:px-40 xl:py-10 h-fit xl:h-screen">
+    <div className="flex xl:px-40 xl:py-10 h-fit xl:h-screen" id="service">
       <div className="w-full flex flex-col justify-evenly">
         <div className="flex justify-center text-center lg:text-start lg:justify-between xl:border-[#BCBCBC] xl:border-b">
           <div className="flex flex-col gap-2 p-4 xl:p-0">
@@ -19,7 +19,7 @@ export const Services = () => {
           {ServiceJSON.map((item, index) => {
             return (
               <div className="SpecailsCard" key={index}>
-                <div>{item.icon}</div>
+                <img src={item.icon} alt="icon" className="w-24" />
                 <div>{item.name}</div>
               </div>
             );

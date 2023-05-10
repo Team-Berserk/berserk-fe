@@ -1,8 +1,8 @@
 import { MuiOtpInput } from "mui-one-time-password-input";
 import { useContext, useEffect, useState } from "react";
 import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
-import { useNavigate } from "react-router-dom";
 import { auth } from "../firebase.config";
+import { useNavigate } from "react-router-dom";
 import { DataContext } from "../Providers/DataContext";
 import { toast } from "react-toastify";
 import Phone from "../Assets/Phone.svg";
@@ -98,7 +98,7 @@ export const OTP = () => {
 
   return (
     <div className="h-screen flex justify-center items-center">
-      <div id="recaptcha-container" style={{ display: "flex" }} />
+      <div id="recaptcha-container"></div>
       {success ? (
         <div className="flex flex-col justify-between h-96 items-center">
           <div className="flex flex-col items-center gap-4 w-96">
@@ -113,7 +113,7 @@ export const OTP = () => {
               )} дугаарт мессежээр ирсэн 6 оронтой тоог оруулна yy.`}
             </h2>
             <MuiOtpInput
-              value={otp}
+              value={otp && otp}
               onChange={setOtp}
               length={6}
               itemType={Number}
@@ -128,7 +128,7 @@ export const OTP = () => {
             <button
               onClick={onSignUp}
               disabled={timer}
-              className={`${timer ? "text-gray-400" : "text-[#516EFF]"}`}
+              className={`${timer ? "text-gray-400" : "text-green-500"}`}
             >
               Дахин илгээх
             </button>
@@ -138,7 +138,7 @@ export const OTP = () => {
             onClick={onOTPVerify}
             className={`${
               otp.length === 6
-                ? "PurpleButton rounded-2xl"
+                ? "ConfirmButton rounded-2xl"
                 : "DisabledButton rounded-2xl"
             }`}
             disabled={!otp}
@@ -158,6 +158,7 @@ export const OTP = () => {
               <div>+976</div>
               <input
                 maxLength={8}
+                type="tel"
                 className="bg-gray-100 outline-none"
                 placeholder="xxxxxxxx"
                 value={phoneNumber}
@@ -169,7 +170,7 @@ export const OTP = () => {
             onClick={onSignUp}
             className={`${
               phoneNumber && phoneNumber.length === 8
-                ? "PurpleButton rounded-2xl"
+                ? "ConfirmButton rounded-2xl"
                 : "DisabledButton rounded-2xl"
             }`}
             disabled={!phoneNumber}

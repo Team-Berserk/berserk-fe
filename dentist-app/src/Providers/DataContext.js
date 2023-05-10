@@ -10,7 +10,6 @@ export const DataProvider = ({ children }) => {
   const [allRequests, setAllRequests] = useState();
   const [phoneNumber, setPhoneNumber] = useState("");
   const [Doctors, setDoctors] = useState([]);
-  // const [Req, setReq] = useState([]);
 
   const [availabletimes, setAvailabletimes] = useState([
     { hour: "10:00", possible: true },
@@ -110,9 +109,9 @@ export const DataProvider = ({ children }) => {
           FuckedUp();
         } else {
           setAllRequests([...allRequests, res.data]);
-          window.localStorage.setItem("request", JSON.stringify(res.data));
+          window.localStorage.removeItem("request");
           console.log(res.data);
-
+          setPhoneNumber("")
           setAppointment({
             Date: "",
             Hour: "",
