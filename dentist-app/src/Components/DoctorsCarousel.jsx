@@ -27,7 +27,10 @@ export const DoctorsCarousel = () => {
   };
 
   return (
-    <div className="h-fit md:h-screen flex bg-gray-100 xl:px-40 xl:py-28 ">
+    <div
+      className="h-fit md:h-screen flex bg-gray-100 xl:px-40 xl:py-28"
+      id="doctors"
+    >
       <div className="w-full flex flex-col justify-evenly">
         <div className="flex justify-between xl:border-[#BCBCBC] items-center lg:border-b">
           <div className="flex flex-col gap-2 p-4 xl:p-0">
@@ -40,24 +43,31 @@ export const DoctorsCarousel = () => {
             MEET OUR <span className="text-yellow-500">DOCTORS</span>
           </div>
         </div>
-
-        <div>
-          <Carousel
-            responsive={responsive}
-            ssr={true}
-            infinite={true}
-            autoPlaySpeed={5000}
-            transitionDuration={500}
-            containerClass="carousel-container"
-            autoPlay={true}
-            className="z-10"
-          >
-            {Doctors &&
-              Doctors.map((item, index) => {
-                return <DoctorProfileCard {...item} key={index} />;
-              })}
-          </Carousel>
-        </div>
+        {Doctors ? (
+          <div>
+            <Carousel
+              responsive={responsive}
+              ssr={true}
+              infinite={true}
+              autoPlaySpeed={4000}
+              transitionDuration={500}
+              containerClass="carousel-container"
+              autoPlay={true}
+              className="z-10"
+            >
+              {Doctors &&
+                Doctors.map((item, index) => {
+                  return <DoctorProfileCard {...item} key={index} />;
+                })}
+            </Carousel>
+          </div>
+        ) : (
+          <div className="flex justify-center items-center">
+            <div class="animate-spin inline-block w-12 h-12 border-[6px] border-current border-t-transparent text-gray-400 rounded-full">
+              <span class="sr-only">Loading...</span>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

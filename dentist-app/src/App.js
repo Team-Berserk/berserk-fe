@@ -1,7 +1,6 @@
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
-import { Header } from "./Components/Header";
 import {
   Appointment,
   Dashboard,
@@ -11,6 +10,7 @@ import {
   PageNotFound,
   Signup,
 } from "./Pages";
+import { Header } from "./Components";
 
 function App() {
   return (

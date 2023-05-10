@@ -6,7 +6,7 @@ export const Hours = () => {
     useContext(DataContext);
 
   return (
-    <div className="flex flex-wrap w-[330px] h-48 overflow-hidden snap-y snap-mandatory overflow-y-scroll justify-center gap-5">
+    <div className="flex flex-wrap w-[330px] h-48 overflow-hidden justify-center gap-5">
       {availabletimes.map((item, index) => {
         return (
           <button
@@ -24,9 +24,9 @@ export const Hours = () => {
               className={
                 item.possible
                   ? appointment.Hour !== item.hour
-                    ? "HourButton snap-center"
-                    : "ChoosenHour snap-center"
-                  : "OccupiedHour snap-center"
+                    ? "HourButton"
+                    : "ChoosenHour"
+                  : "OccupiedHour"
               }
             >
               {item.hour}

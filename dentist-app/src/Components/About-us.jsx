@@ -2,7 +2,7 @@ import Aboutus from "../Assets/Aboutus.svg";
 
 export const AboutUs = () => {
   return (
-    <div className="h-fit md:h-screen flex xl:px-40 xl:py-28 ">
+    <div className="h-fit md:h-screen flex xl:px-40 xl:py-28" id="aboutUs">
       <div className="w-full flex flex-col justify-evenly">
         <div className="flex justify-between items-center xl:border-[#BCBCBC] lg:border-b">
           <div className="flex flex-col gap-2 p-4 xl:p-0">
@@ -12,7 +12,7 @@ export const AboutUs = () => {
           </div>
           <div className="font-bold text-5xl hidden lg:block">Our history</div>
         </div>
-        <div className="flex flex-col md:flex-row justify-around items-center p-8 lg:p-0 gap-5 lg:gap-0 border">
+        <div className="flex flex-col md:flex-row justify-around items-center p-8 lg:p-0 gap-5 lg:gap-0">
           <div>
             <img alt="aboutus" src={Aboutus} />
           </div>

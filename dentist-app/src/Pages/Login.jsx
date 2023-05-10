@@ -1,8 +1,8 @@
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import loginImg from "../Assets/Login.svg";
 import { instance } from "../Clients";
 import { AuthContext } from "../Providers";
+import loginImg from "../Assets/Login.svg";
 
 export const Login = () => {
   const [username, setUsername] = useState("");
