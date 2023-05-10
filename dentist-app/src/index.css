@@ -6,7 +6,40 @@
   .cardDesign {
     @apply flex flex-col border-2 border-rose-500 rounded p-4 justify-start m-1.5;
   }
-  .cardInner {
-    @apply mx-2;
+  .PurpleButton {
+    @apply py-3 px-6 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded shadow-lg transition-all duration-300;
+  }
+  .DisabledButton {
+    @apply py-3 px-6 bg-[#dddddd] text-white font-bold rounded shadow-lg transition-all duration-300;
+  }
+  .CancelButton {
+    @apply py-3 px-6 bg-red-500 hover:bg-red-600 text-white font-bold rounded shadow-lg transition-all duration-300;
+  }
+  .ServiceCard {
+    @apply rounded-md bg-white text-black h-[160px] w-[176px] flex flex-col justify-center gap-3 items-center;
+  }
+  .SpecailsCard {
+    @apply rounded-md bg-[#F8FAFC] text-black h-[240px] w-[284px] flex flex-col justify-center gap-6 items-center border-2;
+  }
+  .DoctorCard {
+    @apply rounded-2xl bg-[#F8FAFC] text-black h-[362px] w-full md:w-80 justify-around items-center border-2 text-lg font-semibold xl:px-40 flex flex-col;
+  }
+  .AppointmentButton {
+    @apply hover:bg-[#EBEBEB] text-blue-500 active:bg-[#DADADA] border-none rounded-3xl flex items-center p-8 h-12 bg-white font-semibold text-center;
+  }
+  .HourButton {
+    @apply py-2 px-4 bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold rounded-lg shadow-md transition-all duration-300;
+  }
+  .ChoosenHour {
+    @apply py-2 px-4 bg-[#516EFF] text-white font-semibold rounded-lg shadow-md transition-all duration-300;
+  }
+  .ConfirmButton {
+    @apply py-3 px-6 bg-green-500 hover:bg-green-600 text-white font-bold rounded shadow-lg transition-all duration-300;
+  }
+  .OccupiedHour {
+    @apply py-2 px-4 bg-red-500 text-white font-semibold rounded-lg shadow-md transition-all duration-300 cursor-not-allowed opacity-50;
+  }
+  .infoInput {
+    @apply py-2 px-4 border border-gray-300 rounded-lg outline-none text-gray-800 bg-gray-50 w-72;
   }
 }

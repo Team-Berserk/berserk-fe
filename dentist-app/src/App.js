@@ -1,18 +1,16 @@
 import './App.css'
 import { Route, Routes } from 'react-router-dom'
+import { ToastContainer } from 'react-toastify'
 import {
   Appointment,
   Dashboard,
   Home,
   Login,
   OTP,
-  Profile,
+  PageNotFound,
   Signup,
 } from './Pages'
-
-import { ToastContainer } from 'react-toastify'
-import { Header } from './Components/Header'
-import { Footer } from './Components/Footer'
+import { Header } from './Components'
 
 function App() {
   return (
@@ -22,15 +20,13 @@ function App() {
       <Routes>
         <Route path="/dashboard" element={<Dashboard />} />
         <Route index element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
+        <Route path="/supersecretpageonlyadmin6969" element={<Login />} />
+        <Route path="/dupersecretpageonlyadmin69" element={<Signup />} />
+        <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/appointment" element={<Appointment />} />
         <Route path="/verification" element={<OTP />} />
-        <Route path="/profile/">
-          <Route path=":id" element={<Profile />} />
-        </Route>
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
-      {/* <Footer /> */}
     </div>
   )
 }
