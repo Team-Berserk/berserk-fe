@@ -1,5 +1,5 @@
-import "./App.css";
-import { Route, Routes } from "react-router-dom";
+import './App.css'
+import { Route, Routes } from 'react-router-dom'
 import {
   Appointment,
   Dashboard,
@@ -8,22 +8,22 @@ import {
   OTP,
   Profile,
   Signup,
-} from "./Pages";
+} from './Pages'
 
-import { ToastContainer } from "react-toastify";
-import { Header } from "./Components/Header";
-import { Footer } from "./Components/Footer";
+import { ToastContainer } from 'react-toastify'
+import { Header } from './Components/Header'
+import { Footer } from './Components/Footer'
 
 function App() {
   return (
     <div className="h-screen">
-      <Header />
       <ToastContainer />
+      <Header />
       <Routes>
+        <Route path="/dashboard" element={<Dashboard />} />
         <Route index element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/appointment" element={<Appointment />} />
         <Route path="/verification" element={<OTP />} />
         <Route path="/profile/">
@@ -32,7 +32,7 @@ function App() {
       </Routes>
       {/* <Footer /> */}
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
