@@ -23,9 +23,15 @@ export const LandingPage = () => {
         </Link>
       </div>
       <div className="flex justify-center">
-        <img src={Landing} alt="LandingImg" className="pt-8 hidden xl:block" />
+        <img
+          src={Landing}
+          alt="LandingImg"
+          className="pt-8 hidden xl:block"
+          draggable={false}
+        />
         <img
           src={LandingScreen}
+          draggable={false}
           alt="LandingImg"
           className="pt-8 w-72 block xl:hidden"
         />

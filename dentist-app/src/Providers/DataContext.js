@@ -9,7 +9,7 @@ export const DataProvider = ({ children }) => {
   const { userData } = useContext(AuthContext);
   const [allRequests, setAllRequests] = useState();
   const [phoneNumber, setPhoneNumber] = useState("");
-  const [Doctors, setDoctors] = useState([]);
+  const [Doctors, setDoctors] = useState(null);
 
   const [availabletimes, setAvailabletimes] = useState([
     { hour: "10:00", possible: true },
@@ -111,7 +111,7 @@ export const DataProvider = ({ children }) => {
           setAllRequests([...allRequests, res.data]);
           window.localStorage.removeItem("request");
           console.log(res.data);
-          setPhoneNumber("")
+          setPhoneNumber("");
           setAppointment({
             Date: "",
             Hour: "",
