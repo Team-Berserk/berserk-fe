@@ -16,13 +16,12 @@ export const OrderStatus = () => {
         <div className="w-auto h-fit bg-white p-2 rounded-2xl flex flex-col items-center">
           {OrderJSON.map((item, index) => {
             return (
-              <div className="w-80 flex justify-between items-center p-4 bg-white md:w-[480px]">
-                <p className="my-2" key={index}>
-                  {item.name}
-                </p>
-                <p className="text-slate-300" key={index}>
-                  {item.clock}
-                </p>
+              <div
+                className="w-80 flex justify-between items-center p-4 bg-white md:w-[480px]"
+                key={index}
+              >
+                <p className="my-2">{item.name}</p>
+                <p className="text-slate-300">{item.clock}</p>
               </div>
             );
           })}
