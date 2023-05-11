@@ -13,7 +13,7 @@ export const Header = () => {
   };
 
   return (
-    <div className="flex absolute top-0 z-50 w-screen bg-white">
+    <div className="flex absolute top-0 z-1 w-screen bg-white">
       <nav className="w-full p-5 lg:flex items-center justify-between mx-0 xl:mx-32">
         <div className="flex justify-between">
           <Link to="/">
