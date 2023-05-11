@@ -86,14 +86,12 @@ export const OTP = () => {
     }
   };
 
-  function isNumber(char) {
-    return !isNaN(parseFloat(char)) && isFinite(char);
-  }
-
   const numberValidator = (e) => {
-    if (isNumber(e.target.value)) {
-      setPhoneNumber(e.target.value);
-    }
+    isFinite(e.target.value) && setPhoneNumber(e.target.value);
+  };
+
+  const otpValidator = (value) => {
+    isFinite(value) && setOtp(value);
   };
 
   return (
@@ -114,7 +112,7 @@ export const OTP = () => {
             </h2>
             <MuiOtpInput
               value={otp && otp}
-              onChange={setOtp}
+              onChange={otpValidator}
               length={6}
               itemType={Number}
             />
@@ -158,7 +156,6 @@ export const OTP = () => {
               <div>+976</div>
               <input
                 maxLength={8}
-                type="tel"
                 className="bg-gray-100 outline-none"
                 placeholder="xxxxxxxx"
                 value={phoneNumber}

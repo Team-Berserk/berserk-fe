@@ -63,8 +63,8 @@ export const DoctorsCarousel = () => {
           </div>
         ) : (
           <div className="flex justify-center items-center">
-            <div class="animate-spin inline-block w-12 h-12 border-[6px] border-current border-t-transparent text-gray-400 rounded-full">
-              <span class="sr-only">Loading...</span>
+            <div className="animate-spin inline-block w-12 h-12 border-[6px] border-current border-t-transparent text-gray-400 rounded-full">
+              <span className="sr-only">Loading...</span>
             </div>
           </div>
         )}

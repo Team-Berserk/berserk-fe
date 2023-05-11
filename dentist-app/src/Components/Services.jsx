@@ -19,7 +19,12 @@ export const Services = () => {
           {ServiceJSON.map((item, index) => {
             return (
               <div className="SpecailsCard" key={index}>
-                <img src={item.icon} alt="icon" className="w-24" />
+                <img
+                  src={item.icon}
+                  alt="icon"
+                  className="w-24"
+                  draggable={false}
+                />
                 <div>{item.name}</div>
               </div>
             );
