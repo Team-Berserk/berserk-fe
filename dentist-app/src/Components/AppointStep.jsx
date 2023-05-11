@@ -16,7 +16,12 @@ export const AppointStep = () => {
           {StepsJSON.map((item, index) => {
             return (
               <div className="ServiceCard text-center" key={index}>
-                <img src={item.icon} alt="icon" className="w-12" />
+                <img
+                  src={item.icon}
+                  alt="icon"
+                  className="w-12"
+                  draggable={false}
+                />
                 <div>{item.name}</div>
               </div>
             );

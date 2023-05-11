@@ -7,6 +7,7 @@ import {
   Home,
   Login,
   OTP,
+  OrderStatus,
   PageNotFound,
   Signup,
 } from "./Pages";

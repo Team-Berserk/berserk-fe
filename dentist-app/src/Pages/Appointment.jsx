@@ -36,7 +36,7 @@ export const Appointment = () => {
         {/* Title Section */}
 
         <div className="text-2xl lg:text-3xl w-96 lg:w-fit font-semibold lg:pt-0 text-center lg:text-start mb-4 lg:mb-12">
-          өдөр болон цагаа сонгоно yy.
+          Өдөр болон цагаа сонгоно yy.
         </div>
 
         {/* Title Section */}

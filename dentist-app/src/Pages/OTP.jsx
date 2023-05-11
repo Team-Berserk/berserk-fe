@@ -96,6 +96,13 @@ export const OTP = () => {
     }
   };
 
+  const otpValidator = (e) => {
+    if (isNumber(e.target.value)) {
+      console.log(e.target.value);
+      setOtp(e.target.value);
+    }
+  };
+
   return (
     <div className="h-screen flex justify-center items-center">
       <div id="recaptcha-container"></div>
