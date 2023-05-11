@@ -8,9 +8,6 @@ export const DataContext = createContext();
 export const DataProvider = ({ children }) => {
   const { userData } = useContext(AuthContext);
   const [allRequests, setAllRequests] = useState();
-  const [surename, setSurename] = useState("");
-  const [ownername, setOwnername] = useState("");
-  const [registration, setRegistration] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [Doctors, setDoctors] = useState([]);
 
@@ -26,13 +23,13 @@ export const DataProvider = ({ children }) => {
   ]);
 
   const [appointment, setAppointment] = useState({
-    Date: null,
-    Hour: null,
-    Ownername: null,
-    Surename: null,
-    Author: null,
-    Phonenumber: null,
-    Registration: null,
+    Date: "",
+    Hour: "",
+    Ownername: "",
+    Surename: "",
+    Author: "",
+    Phonenumber: "",
+    Registration: "",
   });
 
   const checkAvailableTimes = (Date) => {
@@ -89,31 +86,40 @@ export const DataProvider = ({ children }) => {
     });
   };
 
+  useEffect(() => {
+    const localReq = window.localStorage.getItem("request");
+    if (localReq) {
+      setAppointment(JSON.parse(localReq));
+    }
+  }, []);
+
   const requestAppointment = () => {
     instance
       .post("request", {
-        Date: appointment.Date,
-        Hour: appointment.Hour,
+        Date: appointment && appointment.Date,
+        Hour: appointment && appointment.Hour,
         Author: userData._id,
-        Ownername: ownername,
-        Surename: surename,
+        Ownername: appointment && appointment.Ownername,
+        Surename: appointment && appointment.Surename,
         Phonenumber: "+976" + phoneNumber,
-        Registration: registration,
+        Registration: appointment && appointment.Registration,
       })
       .then((res) => {
         if (res.data.message === "177013") {
           FuckedUp();
         } else {
           setAllRequests([...allRequests, res.data]);
+          window.localStorage.removeItem("request");
           console.log(res.data);
-          setOwnername("");
-          setSurename("");
-          setRegistration("");
-          setPhoneNumber("");
+          setPhoneNumber("")
           setAppointment({
-            Date: null,
-            Hour: null,
-            Author: null,
+            Date: "",
+            Hour: "",
+            Ownername: "",
+            Surename: "",
+            Author: "",
+            Phonenumber: "",
+            Registration: "",
           });
         }
       });
@@ -134,23 +140,17 @@ export const DataProvider = ({ children }) => {
     <DataContext.Provider
       value={{
         Doctors,
-        surename,
         Confitrm,
         Navigator,
-        ownername,
         appointment,
         phoneNumber,
         allRequests,
-        setSurename,
-        setOwnername,
-        registration,
         deleteRequest,
         getAllRequests,
         setAllRequests,
         setAppointment,
         availabletimes,
         setPhoneNumber,
-        setRegistration,
         setAvailabletimes,
         requestAppointment,
         checkAvailableTimes,
