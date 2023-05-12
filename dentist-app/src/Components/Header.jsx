@@ -54,9 +54,23 @@ export const Header = () => {
                   className="text-xl font-normal p-1.5 hover:text-blue-500"
                   key={index}
                 >
-                  <a href={`#${item.path}`} onClick={handleClick}>
-                    <div className="font-semibold">{item.name}</div>
-                  </a>
+                  {path.pathname === "/" ? (
+                    <a
+                      onClick={handleClick}
+                      href={`#${item.path}`}
+                      className="transition-all duration-300"
+                    >
+                      <div className="font-semibold text-md xl:text-xl">
+                        {item.name}
+                      </div>
+                    </a>
+                  ) : (
+                    <Link to="/">
+                      <div className="font-semibold text-md xl:text-xl">
+                        {item.name}
+                      </div>
+                    </Link>
+                  )}
                 </div>
               );
             })}
@@ -71,15 +85,23 @@ export const Header = () => {
             {HeaderJSON.map((item, index) => {
               return (
                 <div className="p-1.5 hover:text-blue-500" key={index}>
-                  <a
-                    onClick={handleClick}
-                    href={`#${item.path}`}
-                    className="transition-all duration-300"
-                  >
-                    <div className="font-semibold text-md xl:text-xl">
-                      {item.name}
-                    </div>
-                  </a>
+                  {path.pathname === "/" ? (
+                    <a
+                      onClick={handleClick}
+                      href={`#${item.path}`}
+                      className="transition-all duration-300"
+                    >
+                      <div className="font-semibold text-md xl:text-xl">
+                        {item.name}
+                      </div>
+                    </a>
+                  ) : (
+                    <Link to="/">
+                      <div className="font-semibold text-md xl:text-xl">
+                        {item.name}
+                      </div>
+                    </Link>
+                  )}
                 </div>
               );
             })}

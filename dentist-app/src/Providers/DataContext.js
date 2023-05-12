@@ -2,6 +2,7 @@ import { createContext, useContext, useEffect, useState } from "react";
 import { instance } from "../Clients";
 import { AuthContext } from "./AuthContext";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 export const DataContext = createContext();
 
@@ -10,6 +11,7 @@ export const DataProvider = ({ children }) => {
   const [allRequests, setAllRequests] = useState();
   const [phoneNumber, setPhoneNumber] = useState("");
   const [Doctors, setDoctors] = useState(null);
+  const nav = useNavigate();
 
   const [availabletimes, setAvailabletimes] = useState([
     { hour: "10:00", possible: true },
@@ -58,7 +60,7 @@ export const DataProvider = ({ children }) => {
 
   const Confitrm = () => {
     toast.success("Confirmed!", {
-      position: toast.POSITION.TOP_CENTER,
+      position: toast.POSITION.BOTTOM_RIGHT,
       hideProgressBar: true,
       closeOnClick: true,
       autoClose: 1000,
@@ -67,7 +69,7 @@ export const DataProvider = ({ children }) => {
 
   const FuckedUp = () => {
     toast.error("You fucked up bro!", {
-      position: toast.POSITION.TOP_CENTER,
+      position: toast.POSITION.BOTTOM_RIGHT,
       hideProgressBar: true,
       closeOnClick: true,
       autoClose: 1000,
@@ -111,6 +113,8 @@ export const DataProvider = ({ children }) => {
           setAllRequests([...allRequests, res.data]);
           window.localStorage.removeItem("request");
           console.log(res.data);
+          nav("/");
+          Confitrm();
           setPhoneNumber("");
           setAppointment({
             Date: "",
