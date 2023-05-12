@@ -25,70 +25,56 @@ export const Appointment = () => {
   };
 
   return (
-    <div className="flex justify-center items-center h-fit lg:h-screen">
-      <div
-        className={
-          appointment.Date
-            ? "flex mt-20 flex-col items-center"
-            : "mt-16 flex flex-col items-center"
-        }
-      >
-        {/* Title Section */}
-
-        <div className="text-2xl lg:text-3xl w-96 lg:w-fit font-semibold lg:pt-0 text-center lg:text-start mb-4 lg:mb-12">
-          Өдөр болон цагаа сонгоно yy.
-        </div>
-
-        {/* Title Section */}
-
-        {/* Main Section */}
-
-        <div className="flex flex-col lg:flex-row items-center md:justify-between gap-7 md:gap-0 w-80 md:w-[750px]">
+    <div className="h-screen lg:justify-center lg:items-center lg:flex overflow-y-scroll">
+      <div className="mt-16 lg:mt-32 gap-6 flex flex-col items-center">
+        <div className="text-2xl font-semibold">Өдөр болон цагаа сонгоно yy.</div>
+        <div className="flex flex-col lg:flex-row items-center justify-between w-80 md:w-[750px]">
           <div className="flex flex-col gap-3">
             <CalendarComp />
             {appointment.Date && <Hours />}
           </div>
           <Information />
         </div>
-
-        {/* Main Section */}
-
-        {/* Button Section */}
-
-        <div className="flex gap-7 pt-12">
-          <button className="CancelButton" onClick={Cancel}>
-            Cancel
-          </button>
+        <div className="flex gap-5 py-4">
+          <Link to={"/"}>
+            <button className="CancelButton" onClick={Cancel}>
+              Cancel
+            </button>
+          </Link>
 
           <button
             className={
-              !appointment.Registration ||
+              appointment.Registration.length < 10 ||
               !appointment.Ownername ||
-              !appointment.Surename
+              !appointment.Surename ||
+              !appointment.Date ||
+              !appointment.Hour
                 ? "DisabledButton"
                 : "ConfirmButton"
             }
             disabled={
-              !appointment.Registration ||
+              appointment.Registration.length < 10 ||
               !appointment.Ownername ||
-              !appointment.Surename
+              !appointment.Surename ||
+              !appointment.Date ||
+              !appointment.Hour
             }
             onClick={window.localStorage.setItem(
               "request",
               JSON.stringify(appointment)
             )}
           >
-            {!appointment.Registration ||
+            {appointment.Registration.length < 10 ||
             !appointment.Ownername ||
-            !appointment.Surename ? (
+            !appointment.Surename ||
+            !appointment.Date ||
+            !appointment.Hour ? (
               <div>Confirm</div>
             ) : (
               <Link to="/verification">Confirm</Link>
             )}
           </button>
         </div>
-
-        {/* Button Section */}
       </div>
     </div>
   );

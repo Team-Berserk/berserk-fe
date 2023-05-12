@@ -15,8 +15,7 @@ export const OTP = () => {
   const [seconds, setSeconds] = useState(59);
   const [success, setSuccess] = useState(false);
 
-  const { Confitrm, requestAppointment, phoneNumber, setPhoneNumber } =
-    useContext(DataContext);
+  const { phoneNumber, setPhoneNumber } = useContext(DataContext);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -32,7 +31,7 @@ export const OTP = () => {
 
   const Sent = () => {
     toast.success("Sent!", {
-      position: toast.POSITION.TOP_CENTER,
+      position: toast.POSITION.BOTTOM_RIGHT,
       hideProgressBar: true,
       closeOnClick: true,
       autoClose: 1000,
@@ -74,11 +73,8 @@ export const OTP = () => {
     if (otp) {
       window.confirmationResult
         .confirm(otp)
-        .then(async (res) => {
-          console.log(res.user.phoneNumber);
-          requestAppointment();
-          Confitrm();
-          nav("/");
+        .then(async () => {
+          nav("/orderstatus");
         })
         .catch((err) => {
           console.log(err);
@@ -114,7 +110,7 @@ export const OTP = () => {
               value={otp && otp}
               onChange={otpValidator}
               length={6}
-              itemType={Number}
+              // itemType={Number}
             />
           </div>
 
