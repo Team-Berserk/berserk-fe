@@ -1,18 +1,18 @@
 import Date from "./assets/Date.svg";
-import Hour from "./assets/Hour.svg";
+import Info from "./assets/Info.svg";
 import Confirm from "./assets/Confirm.svg";
 
 export const StepsJSON = [
   {
-    name: "Өдөр сонгох",
+    name: "Өдөрөө сонго",
     icon: Date,
   },
   {
-    name: "Цаг сонгох",
-    icon: Hour,
+    name: "Мэдээллээ оруул",
+    icon: Info,
   },
   {
-    name: "Захиалгаа бaтaлгaaжyyлax",
+    name: "Утасны дугаараараа захиалгаа баталгаажуул",
     icon: Confirm,
   },
 ];
