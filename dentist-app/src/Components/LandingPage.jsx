@@ -5,7 +5,7 @@ import LandingScreen from "../Assets/LandingScreen.svg";
 export const LandingPage = () => {
   return (
     <div
-      className="flex flex-col-reverse xl:flex-row h-full justify-evenly xl:justify-between px-6 xl:px-40 items-center py-32 xl:py-0"
+      className="flex flex-col-reverse xl:flex-row h-full justify-evenly xl:justify-between px-6 xl:px-40 items-center py-32 xl:py-10"
       id="home"
     >
       <div className="flex flex-col gap-5 mt-12 font-medium w-screen md:w-[500px] xl:w-[800px] items-center xl:items-start">
@@ -13,10 +13,9 @@ export const LandingPage = () => {
           Хэнтий аймгийн хамгийн <span className="text-orange-400">гал</span>{" "}
           эмнэлэг
         </div>
-        <div className="p-1 text-[#696969] font-semibold text-sm xl:text-md text-center xl:text-start">
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500 specimen book.
+        <div className="p-1 text-[#696969] font-semibold text-md xl:text-lg text-center xl:text-start">
+          Бид та болон таны гэр бүлийнхний амны хөндийн эрүүл ахуйн төлөө үргэлж
+          хамгийн сайнаараа ажиллах болно .
         </div>
         <Link to="/appointment" className="w-fit mt-4">
           <button className="PurpleButton">Цаг авах</button>

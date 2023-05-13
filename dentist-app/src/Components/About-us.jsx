@@ -17,13 +17,12 @@ export const AboutUs = () => {
             <img alt="aboutus" src={Aboutus} />
           </div>
           <div className="flex flex-col border border-gray-500 bg-slate-100 rounded-xl h-fit p-16 items-center justify-center w-fit lg:w-[600px]">
-            <div className="text-2xl font-semibold">Our history</div>
-            <div className="">
-              What is Soddent Dental Clinic? Soddent Dental Clinic is a simply
-              dummy text of the printing and typesetting industry. Lorem Ipsum
-              has been the industry's standard dummy text ever since the 1500s,
-              when an unknown printer took a galley of type and scrambled it to
-              make a type specimen book. It has survived not only five centuries
+            <div className="text-2xl font-semibold">Бидний Тухай</div>
+            <div>
+              Бид 2012 оноос хойш тасралтгүй үйл ажиллагаа явуулж байгаа бөгөөд
+              тоног төхөөрөмжөө байнга шинэчлэн халдвар хамгааллын дэглэмээ
+              чандлан мөрдөж, тав тухтай найрсаг эрүүл орчинг бүрдүүлж
+              үйлчлүүлэгчийнхээ эрүүл мэндийн төлөө үргэлж хичээн ажиллаж байна.
             </div>
           </div>
         </div>
