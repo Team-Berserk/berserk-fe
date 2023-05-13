@@ -1,17 +1,14 @@
-import './App.css'
-import { Route, Routes } from 'react-router-dom'
-import { ToastContainer } from 'react-toastify'
+import "./App.css";
+import { Route, Routes } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import { Appointment, Home, OTP, OrderStatus, PageNotFound } from "./Pages";
+import { Header } from "./Components";
 import {
-  Appointment,
-  Dashboard,
-  Home,
-  Login,
-  OTP,
-  OrderStatus,
-  PageNotFound,
-  Signup,
-} from './Pages'
-import { Header } from './Components'
+  CalendarComp,
+  Doctors,
+  Hours,
+  Information,
+} from "./Pages/AppointmentPages";
 
 function App() {
   return (
@@ -19,18 +16,18 @@ function App() {
       <ToastContainer />
       <Header />
       <Routes>
-        <Route path="/dashboard" element={<Dashboard />} />
         <Route index element={<Home />} />
-        <Route path="/supersecretpageonlyadmin6969" element={<Login />} />
-        <Route path="/dupersecretpageonlyadmin69" element={<Signup />} />
-        <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/appointment" element={<Appointment />} />
+        <Route path="/appointmentDate" element={<CalendarComp />} />
+        <Route path="/appointmentDoctors" element={<Doctors />} />
+        <Route path="/appointmentHour" element={<Hours />} />
+        <Route path="/appointmentInformation" element={<Information />} />
         <Route path="/verification" element={<OTP />} />
         <Route path="/orderstatus" element={<OrderStatus />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

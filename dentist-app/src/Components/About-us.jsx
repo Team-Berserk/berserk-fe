@@ -16,7 +16,7 @@ export const AboutUs = () => {
           <div>
             <img alt="aboutus" src={Aboutus} />
           </div>
-          <div className="flex flex-col border border-gray-500 bg-slate-100 rounded-xl h-fit p-16 items-center justify-center w-fit lg:w-[600px]">
+          <div className="flex flex-col border border-gray-500 bg-slate-100 rounded-xl gap-6 h-fit p-16 items-center justify-center w-fit lg:w-[600px]">
             <div className="text-2xl font-semibold">Бидний Тухай</div>
             <div>
               Бид 2012 оноос хойш тасралтгүй үйл ажиллагаа явуулж байгаа бөгөөд

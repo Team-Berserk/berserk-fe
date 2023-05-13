@@ -1,18 +1,12 @@
 import { useContext } from "react";
 import { DataContext } from "../Providers/DataContext";
-import { AuthContext } from "../Providers/AuthContext";
 import { Link } from "react-router-dom";
 
 export const OrderStatus = () => {
   const { appointment, requestAppointment, phoneNumber } =
     useContext(DataContext);
-  const { userData } = useContext(AuthContext);
 
   const OrderJSON = [
-    {
-      name: "Registration number",
-      data: appointment.Registration,
-    },
     {
       name: "Date",
       data: appointment.Date,
@@ -22,8 +16,12 @@ export const OrderStatus = () => {
       data: appointment.Hour,
     },
     {
+      name: "Doctor",
+      data: appointment.Doctor,
+    },
+    {
       name: "Phone Number",
-      data: phoneNumber && "+976" + phoneNumber,
+      data: appointment.Phonenumber,
     },
   ];
 
@@ -33,7 +31,7 @@ export const OrderStatus = () => {
         <div className="flex flex-col p-6 justify-center text-center gap-3 text-3xl font-bold">
           <div className="flex flex-col md:flex-row gap-1">
             <div className="flex items-center justify-center">
-              {userData && userData.username}'s
+              <div>{appointment.Ownername}</div>'s
             </div>
             <div>appointment order status</div>
           </div>
@@ -62,11 +60,11 @@ export const OrderStatus = () => {
           })}
         </div>
         <div className="flex gap-7">
-          <Link to="/appointment">
+          <Link to="/appointmentInformation">
             <button className="CancelButton">Cancel</button>
           </Link>
 
-          <button className={"ConfirmButton"} onClick={requestAppointment}>
+          <button className="PurpleButton" onClick={requestAppointment}>
             Confirm
           </button>
         </div>
