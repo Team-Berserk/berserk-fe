@@ -10,14 +10,14 @@ export const LandingPage = () => {
     >
       <div className="flex flex-col gap-5 mt-12 font-medium w-screen md:w-[500px] xl:w-[800px] items-center xl:items-start">
         <div className="text-4xl xl:text-6xl font-extrabold p-1 text-center xl:text-start">
-          Хэнтий аймгийн хамгийн <span className="text-orange-400">гал</span>{" "}
+          Хэнтий аймгийн хамгийн <span className="text-blue-500">гал</span>{" "}
           эмнэлэг
         </div>
         <div className="p-1 text-[#696969] font-semibold text-md xl:text-lg text-center xl:text-start">
           Бид та болон таны гэр бүлийнхний амны хөндийн эрүүл ахуйн төлөө үргэлж
           хамгийн сайнаараа ажиллах болно .
         </div>
-        <Link to="/appointment" className="w-fit mt-4">
+        <Link to="/appointmentDate" className="w-fit mt-4">
           <button className="PurpleButton">Цаг авах</button>
         </Link>
       </div>

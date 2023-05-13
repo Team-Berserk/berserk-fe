@@ -15,7 +15,8 @@ export const OTP = () => {
   const [seconds, setSeconds] = useState(59);
   const [success, setSuccess] = useState(false);
 
-  const { phoneNumber, setPhoneNumber } = useContext(DataContext);
+  const { phoneNumber, setPhoneNumber, setAppointment, appointment } =
+    useContext(DataContext);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -71,6 +72,8 @@ export const OTP = () => {
 
   const onOTPVerify = () => {
     if (otp) {
+      window.localStorage.setItem("request", JSON.stringify(appointment));
+
       window.confirmationResult
         .confirm(otp)
         .then(async () => {
@@ -83,7 +86,13 @@ export const OTP = () => {
   };
 
   const numberValidator = (e) => {
-    isFinite(e.target.value) && setPhoneNumber(e.target.value);
+    if (isFinite(e.target.value)) {
+      setPhoneNumber(e.target.value);
+      setAppointment((prev) => ({
+        ...prev,
+        Phonenumber: "+976" + e.target.value,
+      }));
+    }
   };
 
   const otpValidator = (value) => {
@@ -110,7 +119,6 @@ export const OTP = () => {
               value={otp && otp}
               onChange={otpValidator}
               length={6}
-              // itemType={Number}
             />
           </div>
 
@@ -132,7 +140,7 @@ export const OTP = () => {
             onClick={onOTPVerify}
             className={`${
               otp.length === 6
-                ? "ConfirmButton rounded-2xl"
+                ? "PurpleButton rounded-2xl"
                 : "DisabledButton rounded-2xl"
             }`}
             disabled={!otp}
@@ -163,7 +171,7 @@ export const OTP = () => {
             onClick={onSignUp}
             className={`${
               phoneNumber && phoneNumber.length === 8
-                ? "ConfirmButton rounded-2xl"
+                ? "PurpleButton rounded-2xl"
                 : "DisabledButton rounded-2xl"
             }`}
             disabled={!phoneNumber}

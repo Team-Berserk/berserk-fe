@@ -37,10 +37,10 @@ export const Header = () => {
           <Link to="/">
             <img
               alt="Logo"
-              className="mx-3 w-40 hidden lg:block"
+              className="mx-3 w-52 hidden lg:block"
               src={WebLogo}
             />
-            <img alt="Logo" className="mx-3 block lg:hidden" src={MobaLogo} />
+            <img alt="Logo" className="mx-3 w-8 block lg:hidden" src={MobaLogo} />
           </Link>
           <div className="text-3xl cursor-pointer block lg:hidden ">
             <RxHamburgerMenu name="menu" onClick={Menu} />
@@ -74,7 +74,7 @@ export const Header = () => {
                 </div>
               );
             })}
-            <Link to="/appointment" onClick={Menu}>
+            <Link to="/appointmentDate" onClick={Menu}>
               <div className="border bg-[#516EFF] hover:bg-[#637DFF] rounded-md p-2 px-3 w-32 h-12 flex items-center justify-center text-white font-semibold">
                 Цаг авах
               </div>
@@ -105,7 +105,7 @@ export const Header = () => {
                 </div>
               );
             })}
-            <Link to="/appointment">
+            <Link to="/appointmentDate">
               <div className="PurpleButton">Цаг авах</div>
             </Link>
           </div>

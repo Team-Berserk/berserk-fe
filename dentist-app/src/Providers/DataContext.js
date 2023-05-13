@@ -1,14 +1,11 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { instance } from "../Clients";
-import { AuthContext } from "./AuthContext";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 
 export const DataContext = createContext();
 
 export const DataProvider = ({ children }) => {
-  const { userData } = useContext(AuthContext);
-  const [allRequests, setAllRequests] = useState();
   const [phoneNumber, setPhoneNumber] = useState("");
   const [Doctors, setDoctors] = useState(null);
   const nav = useNavigate();
@@ -28,13 +25,12 @@ export const DataProvider = ({ children }) => {
     Date: "",
     Hour: "",
     Ownername: "",
+    Doctor: "",
     Surename: "",
-    Author: "",
     Phonenumber: "",
-    Registration: "",
   });
 
-  const checkAvailableTimes = (Date) => {
+  const checkAvailableTimes = (Date, doctorId) => {
     const times = [
       { hour: "10:00", possible: true },
       { hour: "11:00", possible: true },
@@ -46,7 +42,7 @@ export const DataProvider = ({ children }) => {
       { hour: "18:00", possible: true },
     ];
 
-    instance.put("/availableTimes", { Date }).then((res) => {
+    instance.put(`/availableTimes/${doctorId}`, { Date }).then((res) => {
       times.forEach((element, index) => {
         if (res.data.includes(element.hour)) {
           element.possible = false;
@@ -67,24 +63,24 @@ export const DataProvider = ({ children }) => {
     });
   };
 
+  const Cancel = () => {
+    setPhoneNumber("");
+    setAppointment({
+      Date: "",
+      Hour: "",
+      Ownername: "",
+      Doctor: "",
+      Surename: "",
+      Phonenumber: "",
+    });
+  };
+
   const FuckedUp = () => {
     toast.error("You fucked up bro!", {
       position: toast.POSITION.BOTTOM_RIGHT,
       hideProgressBar: true,
       closeOnClick: true,
       autoClose: 1000,
-    });
-  };
-
-  const getAllRequests = () => {
-    instance.get("requests").then((res) => {
-      setAllRequests(res.data);
-    });
-  };
-
-  const deleteRequest = (reqId) => {
-    instance.delete("request/" + reqId).then(() => {
-      console.log("gg bro");
     });
   };
 
@@ -100,17 +96,15 @@ export const DataProvider = ({ children }) => {
       .post("request", {
         Date: appointment && appointment.Date,
         Hour: appointment && appointment.Hour,
-        Author: userData._id,
         Ownername: appointment && appointment.Ownername,
+        Doctor: appointment && appointment.Doctor,
         Surename: appointment && appointment.Surename,
-        Phonenumber: "+976" + phoneNumber,
-        Registration: appointment && appointment.Registration,
+        Phonenumber: appointment && appointment.Phonenumber,
       })
       .then((res) => {
         if (res.data.message === "177013") {
           FuckedUp();
         } else {
-          setAllRequests([...allRequests, res.data]);
           window.localStorage.removeItem("request");
           console.log(res.data);
           nav("/");
@@ -121,9 +115,7 @@ export const DataProvider = ({ children }) => {
             Hour: "",
             Ownername: "",
             Surename: "",
-            Author: "",
             Phonenumber: "",
-            Registration: "",
           });
         }
       });
@@ -137,21 +129,17 @@ export const DataProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    getAllRequests();
     getDoctors();
   }, []);
   return (
     <DataContext.Provider
       value={{
+        Cancel,
         Doctors,
         Confitrm,
         Navigator,
         appointment,
         phoneNumber,
-        allRequests,
-        deleteRequest,
-        getAllRequests,
-        setAllRequests,
         setAppointment,
         availabletimes,
         setPhoneNumber,

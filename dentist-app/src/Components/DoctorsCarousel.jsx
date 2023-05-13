@@ -32,14 +32,14 @@ export const DoctorsCarousel = () => {
       id="doctors"
     >
       <div className="w-full flex flex-col justify-evenly">
-        <div className="flex justify-between xl:border-[#BCBCBC] items-center lg:border-b">
+        <div className="flex justify-between items-center md:border-b">
           <div className="flex flex-col gap-2 p-4 xl:p-0">
-            <div className="font-semibold text-3xl xl:text-6xl">
+            <div className="font-semibold text-5xl xl:text-6xl">
               Meet Some of Our
             </div>
-            <div className="font-bold text-4xl xl:text-7xl">Brains</div>
+            <div className="font-bold text-5xl xl:text-7xl">Brains</div>
           </div>
-          <div className="font-bold text-7xl hidden lg:block">
+          <div className="font-bold text-6xl hidden 2xl:block">
             MEET OUR <span className="text-yellow-500">DOCTORS</span>
           </div>
         </div>

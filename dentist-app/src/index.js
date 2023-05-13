@@ -7,18 +7,15 @@ import "react-calendar/dist/Calendar.css";
 import "react-phone-input-2/lib/style.css";
 import "react-toastify/dist/ReactToastify.css";
 import { BrowserRouter } from "react-router-dom";
-import { AuthProvider } from "./Providers";
 import { DataProvider } from "./Providers/DataContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <AuthProvider>
-        <DataProvider>
-          <App />
-        </DataProvider>
-      </AuthProvider>
+      <DataProvider>
+        <App />
+      </DataProvider>
     </BrowserRouter>
   </React.StrictMode>
 );
