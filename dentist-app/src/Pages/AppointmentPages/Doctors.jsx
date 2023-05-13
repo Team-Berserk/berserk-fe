@@ -17,16 +17,17 @@ export const Doctors = () => {
                 key={index}
               >
                 <div>{item.Name}</div>
+                <div>{item._id}</div>
                 <button
                   className={
-                    appointment.Doctor !== item._id
+                    appointment.Dentist !== item._id
                       ? "HourButton font-semibold"
                       : "ChoosenHour"
                   }
                   onClick={() => {
                     setAppointment((prev) => ({
                       ...prev,
-                      Doctor: item._id,
+                      Dentist: item._id,
                     }));
                     checkAvailableTimes(appointment.Date, item._id);
                   }}
@@ -46,8 +47,8 @@ export const Doctors = () => {
         </Link>
         <Link to="/appointmentHour">
           <button
-            className={!appointment.Doctor ? "DisabledButton" : "PurpleButton"}
-            disabled={!appointment.Doctor}
+            className={!appointment.Dentist ? "DisabledButton" : "PurpleButton"}
+            disabled={!appointment.Dentist}
             onClick={window.localStorage.setItem(
               "request",
               JSON.stringify(appointment)

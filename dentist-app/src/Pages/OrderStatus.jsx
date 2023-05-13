@@ -1,10 +1,25 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { DataContext } from "../Providers/DataContext";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import { instance } from "../Clients";
 
 export const OrderStatus = () => {
-  const { appointment, requestAppointment, phoneNumber } =
-    useContext(DataContext);
+  const { appointment, requestAppointment } = useContext(DataContext);
+
+  const [Doctor, setDoctor] = useState("");
+
+  useEffect(() => {
+    if (appointment.Dentist)
+      instance
+        .get(`/doctor/${appointment.Dentist}`)
+        .then((res) => {
+          setDoctor(res.data.Name);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+  });
 
   const OrderJSON = [
     {
@@ -17,7 +32,7 @@ export const OrderStatus = () => {
     },
     {
       name: "Doctor",
-      data: appointment.Doctor,
+      data: Doctor,
     },
     {
       name: "Phone Number",
