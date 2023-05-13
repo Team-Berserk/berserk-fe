@@ -1,7 +1,7 @@
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
-import { Appointment, Home, OTP, OrderStatus, PageNotFound } from "./Pages";
+import { Home, OTP, OrderStatus, PageNotFound } from "./Pages";
 import { Header } from "./Components";
 import {
   CalendarComp,
@@ -17,7 +17,6 @@ function App() {
       <Header />
       <Routes>
         <Route index element={<Home />} />
-        <Route path="/appointment" element={<Appointment />} />
         <Route path="/appointmentDate" element={<CalendarComp />} />
         <Route path="/appointmentDoctors" element={<Doctors />} />
         <Route path="/appointmentHour" element={<Hours />} />
