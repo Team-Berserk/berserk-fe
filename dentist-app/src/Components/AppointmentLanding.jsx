@@ -13,7 +13,7 @@ export const AppointmentLanding = () => {
             Helping patients achieve good dental health & beautiful smile.
           </div>
         </div>
-        <Link to="/appointment">
+        <Link to="/appointmentDate">
           <button className="AppointmentButton text-sm xl:text-lg">
             Create Appointment Now!
           </button>

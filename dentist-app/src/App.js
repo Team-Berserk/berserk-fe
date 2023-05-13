@@ -17,7 +17,6 @@ function App() {
       <Header />
       <Routes>
         <Route index element={<Home />} />
-        <Route path="/appointment" element={<Appointment />} />
         <Route path="/appointmentDate" element={<CalendarComp />} />
         <Route path="/appointmentDoctors" element={<Doctors />} />
         <Route path="/appointmentHour" element={<Hours />} />
