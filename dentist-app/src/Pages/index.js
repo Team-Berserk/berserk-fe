@@ -5,3 +5,4 @@ export * from "./Signup";
 export * from "./AdminDashboard";
 export * from "./OTP";
 export * from "./PageNotFound";
+export * from "./OrderStatus"

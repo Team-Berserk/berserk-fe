@@ -15,8 +15,7 @@ export const OTP = () => {
   const [seconds, setSeconds] = useState(59);
   const [success, setSuccess] = useState(false);
 
-  const { Confitrm, requestAppointment, phoneNumber, setPhoneNumber } =
-    useContext(DataContext);
+  const { phoneNumber, setPhoneNumber } = useContext(DataContext);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -32,7 +31,7 @@ export const OTP = () => {
 
   const Sent = () => {
     toast.success("Sent!", {
-      position: toast.POSITION.TOP_CENTER,
+      position: toast.POSITION.BOTTOM_RIGHT,
       hideProgressBar: true,
       closeOnClick: true,
       autoClose: 1000,
@@ -74,11 +73,8 @@ export const OTP = () => {
     if (otp) {
       window.confirmationResult
         .confirm(otp)
-        .then(async (res) => {
-          console.log(res.user.phoneNumber);
-          requestAppointment();
-          Confitrm();
-          nav("/");
+        .then(async () => {
+          nav("/orderstatus");
         })
         .catch((err) => {
           console.log(err);
@@ -86,14 +82,12 @@ export const OTP = () => {
     }
   };
 
-  function isNumber(char) {
-    return !isNaN(parseFloat(char)) && isFinite(char);
-  }
-
   const numberValidator = (e) => {
-    if (isNumber(e.target.value)) {
-      setPhoneNumber(e.target.value);
-    }
+    isFinite(e.target.value) && setPhoneNumber(e.target.value);
+  };
+
+  const otpValidator = (value) => {
+    isFinite(value) && setOtp(value);
   };
 
   return (
@@ -114,9 +108,9 @@ export const OTP = () => {
             </h2>
             <MuiOtpInput
               value={otp && otp}
-              onChange={setOtp}
+              onChange={otpValidator}
               length={6}
-              itemType={Number}
+              // itemType={Number}
             />
           </div>
 
@@ -158,7 +152,6 @@ export const OTP = () => {
               <div>+976</div>
               <input
                 maxLength={8}
-                type="tel"
                 className="bg-gray-100 outline-none"
                 placeholder="xxxxxxxx"
                 value={phoneNumber}

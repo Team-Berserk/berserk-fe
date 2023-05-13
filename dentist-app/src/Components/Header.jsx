@@ -1,19 +1,37 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { HeaderJSON } from "./json/HeaderJSON";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
 import WebLogo from "../Assets/WebLogo.svg";
 import MobaLogo from "../Assets/MobaLogo.svg";
 
 export const Header = () => {
   const [isShowMenu, setIsShowMenu] = useState(true);
+  const [targetId, setTargetId] = useState("");
+  const path = useLocation();
 
   const Menu = () => {
     setIsShowMenu(!isShowMenu);
   };
 
+  useEffect(() => {
+    if (path.pathname === "/")
+      if (targetId) {
+        const targetElement = document.querySelector(targetId);
+        targetElement.scrollIntoView({ behavior: "smooth" });
+      }
+  }, [targetId]);
+
+  function handleClick(event) {
+    if (!isShowMenu) {
+      Menu();
+    }
+    event.preventDefault();
+    setTargetId(event.currentTarget.getAttribute("href"));
+  }
+
   return (
-    <div className="flex absolute top-0 z-50 w-screen bg-white">
+    <div className="flex absolute top-0 z-1 w-screen z-50 bg-white">
       <nav className="w-full p-5 lg:flex items-center justify-between mx-0 xl:mx-32">
         <div className="flex justify-between">
           <Link to="/">
@@ -36,9 +54,23 @@ export const Header = () => {
                   className="text-xl font-normal p-1.5 hover:text-blue-500"
                   key={index}
                 >
-                  <a href={`#${item.path}`} onClick={Menu}>
-                    <div className="font-semibold">{item.name}</div>
-                  </a>
+                  {path.pathname === "/" ? (
+                    <a
+                      onClick={handleClick}
+                      href={`#${item.path}`}
+                      className="transition-all duration-300"
+                    >
+                      <div className="font-semibold text-md xl:text-xl">
+                        {item.name}
+                      </div>
+                    </a>
+                  ) : (
+                    <Link to="/">
+                      <div className="font-semibold text-md xl:text-xl">
+                        {item.name}
+                      </div>
+                    </Link>
+                  )}
                 </div>
               );
             })}
@@ -53,14 +85,23 @@ export const Header = () => {
             {HeaderJSON.map((item, index) => {
               return (
                 <div className="p-1.5 hover:text-blue-500" key={index}>
-                  <a
-                    href={`#${item.path}`}
-                    className="transition-all duration-300"
-                  >
-                    <div className="font-semibold text-md xl:text-xl">
-                      {item.name}
-                    </div>
-                  </a>
+                  {path.pathname === "/" ? (
+                    <a
+                      onClick={handleClick}
+                      href={`#${item.path}`}
+                      className="transition-all duration-300"
+                    >
+                      <div className="font-semibold text-md xl:text-xl">
+                        {item.name}
+                      </div>
+                    </a>
+                  ) : (
+                    <Link to="/">
+                      <div className="font-semibold text-md xl:text-xl">
+                        {item.name}
+                      </div>
+                    </Link>
+                  )}
                 </div>
               );
             })}

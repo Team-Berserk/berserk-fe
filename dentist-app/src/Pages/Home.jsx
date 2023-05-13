@@ -10,7 +10,7 @@ import {
 
 export const Home = () => {
   return (
-    <div className="snap-y snap-mandatory h-full overflow-y-scroll">
+    <div className="h-full overflow-y-scroll">
       <LandingPage />
       <AppointStep />
       <Services />

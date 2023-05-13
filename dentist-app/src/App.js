@@ -7,6 +7,7 @@ import {
   Home,
   Login,
   OTP,
+  OrderStatus,
   PageNotFound,
   Signup,
 } from './Pages'
@@ -25,6 +26,7 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/appointment" element={<Appointment />} />
         <Route path="/verification" element={<OTP />} />
+        <Route path="/orderstatus" element={<OrderStatus />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </div>
