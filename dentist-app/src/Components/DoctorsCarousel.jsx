@@ -43,7 +43,7 @@ export const DoctorsCarousel = () => {
             MEET OUR <span className="text-yellow-500">DOCTORS</span>
           </div>
         </div>
-        {!Doctors.length == 0 ? (
+        {Doctors ? (
           <div>
             <Carousel
               responsive={responsive}
@@ -51,7 +51,6 @@ export const DoctorsCarousel = () => {
               infinite={true}
               autoPlaySpeed={4000}
               transitionDuration={500}
-              containerClass="carousel-container"
               autoPlay={true}
               className="z-10"
             >

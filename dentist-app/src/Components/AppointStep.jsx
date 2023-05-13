@@ -12,10 +12,10 @@ export const AppointStep = () => {
             Эдгээр энгийн алхмуудыг дагаарай
           </div>
         </div>
-        <div className="flex flex-wrap justify-center font-semibold text-lg pb-20 xl:pb-0 gap-10">
+        <div className="flex flex-col md:flex-row justify-center w-80 md:w-fit font-semibold text-lg pb-20 xl:pb-0 gap-10">
           {StepsJSON.map((item, index) => {
             return (
-              <div className="ServiceCard text-center" key={index}>
+              <div className="ServiceCard text-center py-3" key={index}>
                 <img
                   src={item.icon}
                   alt="icon"

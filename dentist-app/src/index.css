@@ -16,10 +16,10 @@
     @apply py-3 px-6 bg-gray-500  text-white font-bold rounded shadow-lg transition-all duration-300;
   }
   .ServiceCard {
-    @apply rounded-md bg-white text-black h-[180px] w-[196px] flex flex-col justify-center gap-3 items-center;
+    @apply rounded-md bg-white text-black h-fit md:h-[180px] w-full md:w-[196px] flex flex-col justify-center gap-3 items-center;
   }
   .SpecailsCard {
-    @apply rounded-md bg-[#F8FAFC] text-black h-[240px] w-[284px] flex flex-col justify-center gap-6 items-center border-2;
+    @apply rounded-md bg-[#F8FAFC] text-black h-fit md:h-[240px] w-80 md:w-[284px] flex flex-col justify-center gap-6 items-center border;
   }
   .DoctorCard {
     @apply rounded-2xl bg-[#F8FAFC] text-black h-[362px] w-full md:w-80 justify-around items-center border-2 text-lg font-semibold xl:px-40 flex flex-col;

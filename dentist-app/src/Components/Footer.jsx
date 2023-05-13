@@ -8,11 +8,11 @@ export const Footer = () => {
         <div className="flex flex-col justify-evenly font-light py-4 md:p-0">
           <div className="flex flex-col gap-3 w-auto">
             <div className="text-2xl md:text-2xl flex w-auto gap-2">
-              <img src={WebLogo} alt="webLogo" /> Soddent Dentail Clinic
+              <img src={WebLogo} alt="webLogo" />
             </div>
             <div className="w-auto md:w-96">
-              High level experience in web design and development knowledge,
-              producing quality work.
+              Бид та болон таны гэр бүлийнхний амны хөндийн эрүүл ахуйн төлөө
+              үргэлж хамгийн сайнаараа ажиллах болно .
             </div>
           </div>
           <div className="my-3 md:m-0">LOGOS insta fabceovok link</div>

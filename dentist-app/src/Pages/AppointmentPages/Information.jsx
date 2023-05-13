@@ -3,7 +3,7 @@ import { DataContext } from "../../Providers/DataContext";
 import { Link } from "react-router-dom";
 
 export const Information = () => {
-  const { setAppointment, appointment, Cancel } = useContext(DataContext);
+  const { setAppointment, appointment } = useContext(DataContext);
 
   return (
     <div className="h-screen flex flex-col justify-center items-center">

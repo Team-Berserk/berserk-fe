@@ -5,7 +5,7 @@ import LandingScreen from "../Assets/LandingScreen.svg";
 export const LandingPage = () => {
   return (
     <div
-      className="flex flex-col-reverse xl:flex-row h-full justify-evenly xl:justify-between px-6 xl:px-40 items-center py-32 xl:py-10"
+      className="flex flex-col-reverse xl:flex-row h-fit md:h-screen justify-evenly xl:justify-between px-6 xl:px-40 items-center py-20 xl:py-10"
       id="home"
     >
       <div className="flex flex-col gap-5 mt-12 font-medium w-screen md:w-[500px] xl:w-[800px] items-center xl:items-start">
@@ -17,7 +17,7 @@ export const LandingPage = () => {
           Бид та болон таны гэр бүлийнхний амны хөндийн эрүүл ахуйн төлөө үргэлж
           хамгийн сайнаараа ажиллах болно .
         </div>
-        <Link to="/appointmentDate" className="w-fit mt-4">
+        <Link to="/appointmentDate" className="w-fit">
           <button className="PurpleButton">Цаг авах</button>
         </Link>
       </div>
@@ -32,7 +32,7 @@ export const LandingPage = () => {
           src={LandingScreen}
           draggable={false}
           alt="LandingImg"
-          className="pt-8 w-72 block xl:hidden"
+          className="w-72 block xl:hidden"
         />
       </div>
     </div>

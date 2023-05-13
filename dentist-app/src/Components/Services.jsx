@@ -15,14 +15,14 @@ export const Services = () => {
             KEY <span className="text-yellow-500">FEATURE</span>
           </div>
         </div>
-        <div className="flex flex-wrap justify-center text-lg font-semibold gap-10 py-14 xl:py-0">
+        <div className="flex flex-wrap justify-center font-semibold gap-10 py-7 xl:py-0 text-center">
           {ServiceJSON.map((item, index) => {
             return (
               <div className="SpecailsCard" key={index}>
                 <img
                   src={item.icon}
                   alt="icon"
-                  className="w-24"
+                  className="w-20 md:w-24"
                   draggable={false}
                 />
                 <div>{item.name}</div>

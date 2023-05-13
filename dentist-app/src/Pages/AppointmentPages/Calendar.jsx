@@ -1,13 +1,14 @@
 import "react-modern-calendar-datepicker/lib/DatePicker.css";
 import { Calendar, utils } from "@amir04lm26/react-modern-calendar-date-picker";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { DataContext } from "../../Providers/DataContext";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
 export const CalendarComp = () => {
   const [selectedDay, setSelectedDay] = useState(null);
-  const { setAppointment, appointment, Cancel } = useContext(DataContext);
+  const { setAppointment, appointment, setPhoneNumber } =
+    useContext(DataContext);
 
   const disabledDays = [
     {
@@ -36,6 +37,19 @@ export const CalendarComp = () => {
       day: 15,
     },
   ];
+
+  const Cancel = () => {
+    window.localStorage.removeItem("request");
+    setPhoneNumber("");
+    setAppointment({
+      Date: "",
+      Hour: "",
+      Ownername: "",
+      Doctor: "",
+      Surename: "",
+      Phonenumber: "",
+    });
+  };
 
   const TimerChangerFormat = (date) => {
     const Date = `${date.year}-${date.month < 10 ? "0" : ""}${date.month}-${

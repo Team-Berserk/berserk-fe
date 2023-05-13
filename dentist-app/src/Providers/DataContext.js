@@ -7,7 +7,7 @@ export const DataContext = createContext();
 
 export const DataProvider = ({ children }) => {
   const [phoneNumber, setPhoneNumber] = useState("");
-  const [Doctors, setDoctors] = useState([]);
+  const [Doctors, setDoctors] = useState(null);
   const nav = useNavigate();
 
   const [availabletimes, setAvailabletimes] = useState([
@@ -25,7 +25,7 @@ export const DataProvider = ({ children }) => {
     Date: "",
     Hour: "",
     Ownername: "",
-    Doctor: "",
+    Dentist: "",
     Surename: "",
     Phonenumber: "",
   });
@@ -49,7 +49,7 @@ export const DataProvider = ({ children }) => {
           times[index].possible = false;
         }
       });
-      // console.log(times);
+      console.log(times);
     });
     setAvailabletimes(times);
   };
@@ -60,18 +60,6 @@ export const DataProvider = ({ children }) => {
       hideProgressBar: true,
       closeOnClick: true,
       autoClose: 1000,
-    });
-  };
-
-  const Cancel = () => {
-    setPhoneNumber("");
-    setAppointment({
-      Date: "",
-      Hour: "",
-      Ownername: "",
-      Doctor: "",
-      Surename: "",
-      Phonenumber: "",
     });
   };
 
@@ -97,7 +85,7 @@ export const DataProvider = ({ children }) => {
         Date: appointment && appointment.Date,
         Hour: appointment && appointment.Hour,
         Ownername: appointment && appointment.Ownername,
-        Doctor: appointment && appointment.Doctor,
+        Dentist: appointment && appointment.Dentist,
         Surename: appointment && appointment.Surename,
         Phonenumber: appointment && appointment.Phonenumber,
       })
@@ -113,7 +101,7 @@ export const DataProvider = ({ children }) => {
           setAppointment({
             Date: "",
             Hour: "",
-            Doctor: "",
+            Dentist: "",
             Ownername: "",
             Surename: "",
             Phonenumber: "",
@@ -135,7 +123,6 @@ export const DataProvider = ({ children }) => {
   return (
     <DataContext.Provider
       value={{
-        Cancel,
         Doctors,
         Confitrm,
         Navigator,
