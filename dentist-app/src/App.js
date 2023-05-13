@@ -1,6 +1,6 @@
-import "./App.css";
-import { Route, Routes } from "react-router-dom";
-import { ToastContainer } from "react-toastify";
+import './App.css'
+import { Route, Routes } from 'react-router-dom'
+import { ToastContainer } from 'react-toastify'
 import {
   Appointment,
   Dashboard,
@@ -10,15 +10,16 @@ import {
   OrderStatus,
   PageNotFound,
   Signup,
-} from "./Pages";
-import { Header } from "./Components";
+} from './Pages'
+import { Header } from './Components'
 
 function App() {
   return (
     <div className="h-screen">
-      <Header />
       <ToastContainer />
+      <Header />
       <Routes>
+        <Route path="/dashboard" element={<Dashboard />} />
         <Route index element={<Home />} />
         <Route path="/supersecretpageonlyadmin6969" element={<Login />} />
         <Route path="/dupersecretpageonlyadmin69" element={<Signup />} />
@@ -29,7 +30,7 @@ function App() {
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
