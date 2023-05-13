@@ -43,7 +43,7 @@ export const DoctorsCarousel = () => {
             MEET OUR <span className="text-yellow-500">DOCTORS</span>
           </div>
         </div>
-        {Doctors ? (
+        {!Doctors.length == 0 ? (
           <div>
             <Carousel
               responsive={responsive}

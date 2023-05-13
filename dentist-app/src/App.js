@@ -1,7 +1,7 @@
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
-import { Appointment, Home, OTP, OrderStatus, PageNotFound } from "./Pages";
+import { Home, OTP, OrderStatus, PageNotFound } from "./Pages";
 import { Header } from "./Components";
 import {
   CalendarComp,
