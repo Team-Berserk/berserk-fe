@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import Landing from "../Assets/LandingImg.svg";
-import LandingScreen from "../Assets/LandingScreen.svg";
+import Landing from "../Assets/landingAssets/LandingImg.svg";
+import LandingScreen from "../Assets/landingAssets/LandingScreen.svg";
 
 export const LandingPage = () => {
   return (

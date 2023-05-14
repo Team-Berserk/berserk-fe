@@ -1,4 +1,4 @@
-import Aboutus from "../Assets/Aboutus.svg";
+import Aboutus from "../Assets/landingAssets/Aboutus.svg";
 
 export const AboutUs = () => {
   return (
@@ -7,7 +7,7 @@ export const AboutUs = () => {
         <div className="flex justify-between items-center xl:border-[#BCBCBC] lg:border-b">
           <div className="flex flex-col gap-2 p-4 xl:p-0">
             <div className="font-bold text-4xl xl:text-7xl">
-              БИД <span className="text-yellow-500">ХЭН БЭ</span>
+              Бид <span className="text-yellow-500">хэн бэ</span>
             </div>
           </div>
           <div className="font-bold text-5xl hidden lg:block">Бидний түүх</div>
@@ -16,7 +16,7 @@ export const AboutUs = () => {
           <div>
             <img alt="aboutus" src={Aboutus} />
           </div>
-          <div className="flex flex-col border border-gray-500 bg-slate-100 rounded-xl gap-6 h-fit p-16 items-center justify-center w-fit lg:w-[600px]">
+          <div className="flex flex-col border bg-slate-100 rounded-xl gap-6 h-fit p-16 items-center justify-center w-fit lg:w-[600px]">
             <div className="text-2xl font-semibold">Бидний Тухай</div>
             <div>
               Бид 2012 оноос хойш тасралтгүй үйл ажиллагаа явуулж байгаа бөгөөд

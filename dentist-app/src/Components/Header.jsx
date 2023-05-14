@@ -2,8 +2,8 @@ import { Link, useLocation } from "react-router-dom";
 import { HeaderJSON } from "./json/HeaderJSON";
 import { useEffect, useState } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
-import WebLogo from "../Assets/WebLogo.svg";
-import MobaLogo from "../Assets/MobaLogo.svg";
+import WebLogo from "../Assets/headerAssets/WebLogo.svg";
+import MobaLogo from "../Assets/headerAssets/MobaLogo.svg";
 
 export const Header = () => {
   const [isShowMenu, setIsShowMenu] = useState(true);

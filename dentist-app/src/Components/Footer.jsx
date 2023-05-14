@@ -3,12 +3,12 @@ import calendar from "../Assets/footerAssets/footerCalendar.svg";
 import map from "../Assets/footerAssets/footerMap.svg";
 import headset from "../Assets/footerAssets/footerHeadset.svg";
 import facebook from "../Assets/footerAssets/footerFacebook.svg";
-import WebLogo from "../Assets/WebLogo.svg";
+import WebLogo from "../Assets/headerAssets/WebLogo.svg";
 
 export const Footer = () => {
   return (
     <div className="flex flex-col">
-      <div className="flex flex-col w-full justify-evenly md:flex-row p-2 h-fit md:h-72">
+      <div className="flex flex-col lg:flex-row w-full justify-evenly p-2 h-fit lg:h-72">
         <div className="flex flex-col justify-evenly font-light py-4 md:p-0">
           <div className="flex flex-col gap-3 w-auto">
             <div className="text-2xl md:text-2xl flex w-auto gap-2">

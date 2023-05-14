@@ -23,39 +23,35 @@ export const OrderStatus = () => {
 
   const OrderJSON = [
     {
-      name: "Date",
+      name: "Өдөр",
       data: appointment.Date,
     },
     {
-      name: "Hour",
+      name: "Цаг",
       data: appointment.Hour,
     },
     {
-      name: "Doctor",
+      name: "Эмч",
       data: Doctor,
     },
     {
-      name: "Phone Number",
+      name: "Утасны дугаар",
       data: appointment.Phonenumber,
     },
   ];
 
   return (
-    <div className="h-screen justify-center items-center flex overflow-y-scroll">
-      <div className="flex flex-col rounded-2xl p-4 gap-16 items-center">
-        <div className="flex flex-col p-6 justify-center text-center gap-3 text-3xl font-bold">
-          <div className="flex flex-col md:flex-row gap-1">
-            <div className="flex items-center justify-center">
-              <div>{appointment.Ownername}</div>'s
-            </div>
-            <div>appointment order status</div>
-          </div>
-          <div className="text-sm font-medium">Та мэдээллээ шалгана уу.</div>
+    <div className="h-screen justify-center items-center flex overflow-y-scroll bg-appointmentImg bg-fixed bg-cover bg-center">
+      <div className="flex flex-col rounded-2xl gap-8 items-center">
+        <div className="flex flex-col justify-center gap-3 mx-6 text-3xl font-semibold mt-16 lg:mt-0">
+          <div>Та мэдээллээ шалгана уу.</div>
         </div>
         <div className="flex flex-wrap justify-center md:flex-row items-center gap-5">
-          <div className="w-44 h-24 bg-gray-100 flex items-center flex-col justify-center gap-3 rounded-md">
-            <div className="font-semibold">Name</div>
-            <hr className="w-32" />
+          <div className="w-80 lg:w-44 h-12 lg:h-24 bg-gray-100 flex items-center justify-normal lg:justify-center flex-row pl-3 lg:pl-0 lg:flex-col gap-3">
+            <div className="font-semibold flex">
+              Овог, Нэр<p className="block lg:hidden">:</p>
+            </div>
+            <hr className="w-32 hidden lg:block" />
             <div className="flex w-fit gap-1">
               <div>{appointment.Surename}</div>
               <div>{appointment.Ownername}</div>
@@ -64,23 +60,26 @@ export const OrderStatus = () => {
           {OrderJSON.map((item, index) => {
             return (
               <div
-                className="w-44 h-24 bg-gray-100 flex items-center flex-col justify-center gap-3 rounded-md"
+                className="w-80 lg:w-44 h-12 lg:h-24 bg-gray-100 flex items-center justify-normal lg:justify-center flex-row pl-3 lg:pl-0 lg:flex-col gap-3"
                 key={index}
               >
-                <div className="font-semibold">{item.name}</div>
-                <hr className="w-32" />
+                <div className="font-semibold flex">
+                  {item.name}
+                  <p className="block lg:hidden">:</p>
+                </div>
+                <hr className="w-32 hidden lg:block" />
                 <div>{item.data}</div>
               </div>
             );
           })}
         </div>
-        <div className="flex gap-7">
+        <div className="flex gap-7 pb-6">
           <Link to="/appointmentInformation">
-            <button className="CancelButton">Cancel</button>
+            <button className="CancelButton">Буцах</button>
           </Link>
 
           <button className="PurpleButton" onClick={requestAppointment}>
-            Confirm
+            Баталгаажуулах
           </button>
         </div>
       </div>

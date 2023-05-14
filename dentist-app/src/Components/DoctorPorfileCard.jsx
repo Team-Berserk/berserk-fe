@@ -5,7 +5,7 @@ export const DoctorProfileCard = ({ Name, Skills }) => {
   return (
     <div className="DoctorCard">
       <div className="w-32 text-center flex flex-col items-center gap-3">
-      <img alt="profile" src={Doctor} draggable={false} />
+        <img alt="profile" src={Doctor} draggable={false} />
         <div className="w-72 flex flex-col">
           <div>{Name}</div>
           <div className="text-sm font-medium text-gray-500">{Skills}</div>

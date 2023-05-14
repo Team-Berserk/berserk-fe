@@ -3,8 +3,9 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        dental: 'url("../src/Assets/Dental.jpg")',
-        dental2: 'url("../src/Assets/Dental2.jpg")',
+        dental: 'url("../src/Assets/landingAssets/Dental.jpg")',
+        dental2: 'url("../src/Assets/landingAssets/Dental2.jpg")',
+        appointmentImg: 'url("../src/Assets/AppointmentPages.svg")',
       },
     },
   },

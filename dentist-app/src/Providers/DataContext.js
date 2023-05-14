@@ -56,16 +56,16 @@ export const DataProvider = ({ children }) => {
 
   const Confitrm = () => {
     toast.success("Confirmed!", {
-      position: toast.POSITION.BOTTOM_RIGHT,
+      position: toast.POSITION.TOP_CENTER,
       hideProgressBar: true,
       closeOnClick: true,
-      autoClose: 1000,
+      autoClose: 4000,
     });
   };
 
   const FuckedUp = () => {
     toast.error("You fucked up bro!", {
-      position: toast.POSITION.BOTTOM_RIGHT,
+      position: toast.POSITION.TOP_CENTER,
       hideProgressBar: true,
       closeOnClick: true,
       autoClose: 1000,
