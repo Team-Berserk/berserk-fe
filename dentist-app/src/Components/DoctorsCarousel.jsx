@@ -35,12 +35,12 @@ export const DoctorsCarousel = () => {
         <div className="flex justify-between items-center md:border-b">
           <div className="flex flex-col gap-2 p-4 xl:p-0">
             <div className="font-semibold text-5xl xl:text-6xl">
-              Meet Some of Our
+              Мэргэшсэн шүдний
             </div>
-            <div className="font-bold text-5xl xl:text-7xl">Brains</div>
+            <div className="font-bold text-5xl xl:text-7xl">эмч нар</div>
           </div>
           <div className="font-bold text-6xl hidden 2xl:block">
-            MEET OUR <span className="text-yellow-500">DOCTORS</span>
+            Манай <span className="text-yellow-500">эмч</span> нар
           </div>
         </div>
         {Doctors ? (

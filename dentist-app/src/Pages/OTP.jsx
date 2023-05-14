@@ -5,8 +5,8 @@ import { auth } from "../firebase.config";
 import { useNavigate } from "react-router-dom";
 import { DataContext } from "../Providers/DataContext";
 import { toast } from "react-toastify";
-import Phone from "../Assets/Phone.svg";
-import Message from "../Assets/Message.svg";
+import Phone from "../Assets/otpAssets/Phone.svg";
+import Message from "../Assets/otpAssets/Message.svg";
 
 export const OTP = () => {
   const nav = useNavigate();
@@ -32,7 +32,7 @@ export const OTP = () => {
 
   const Sent = () => {
     toast.success("Sent!", {
-      position: toast.POSITION.BOTTOM_RIGHT,
+      position: toast.POSITION.TOP_CENTER,
       hideProgressBar: true,
       closeOnClick: true,
       autoClose: 1000,
@@ -100,11 +100,11 @@ export const OTP = () => {
   };
 
   return (
-    <div className="h-screen flex justify-center items-center">
+    <div className="h-screen flex justify-center items-center bg-appointmentImg bg-fixed bg-cover bg-center">
       <div id="recaptcha-container"></div>
       {success ? (
         <div className="flex flex-col justify-between h-96 items-center">
-          <div className="flex flex-col items-center gap-4 w-96">
+          <div className="flex flex-col items-center gap-8 w-[340px] lg:w-96 bg-white">
             <img src={Message} alt="message" className="w-10" />
             <h2 className="text-3xl font-extrabold text-center">
               Утасны дугаар баталгаажуулах
@@ -115,10 +115,12 @@ export const OTP = () => {
                 8
               )} дугаарт мессежээр ирсэн 6 оронтой тоог оруулна yy.`}
             </h2>
+
             <MuiOtpInput
               value={otp && otp}
               onChange={otpValidator}
               length={6}
+              itemType="number"
             />
           </div>
 
@@ -145,22 +147,22 @@ export const OTP = () => {
             }`}
             disabled={!otp}
           >
-            Verify OTP
+            Баталгаажуулах
           </button>
         </div>
       ) : (
-        <div className="flex flex-col justify-around h-96 items-center">
+        <div className="flex flex-col justify-around h-96 items-center bg-appointmentImg bg-fixed bg-cover bg-center">
           <div className="flex flex-col items-center gap-4 w-96">
             <img src={Phone} alt="PhoneVector" className="w-10" />
             <h2 className="text-3xl font-extrabold">Утасны дугаар</h2>
             <h2 className="text-sm text-center font-medium">
               Уулзалтаа баталгаажуулахын тулд утасны дугаараа оруулна уу.
             </h2>
-            <div className="flex justify-center items-center border p-4 bg-gray-100 rounded-md w-60 gap-2">
+            <div className="flex justify-center items-center border p-4 bg-white rounded-md w-60 gap-2">
               <div>+976</div>
               <input
                 maxLength={8}
-                className="bg-gray-100 outline-none"
+                className="bg-white outline-none"
                 placeholder="xxxxxxxx"
                 value={phoneNumber}
                 onChange={numberValidator}
@@ -176,7 +178,7 @@ export const OTP = () => {
             }`}
             disabled={!phoneNumber}
           >
-            send
+            Код авах
           </button>
         </div>
       )}

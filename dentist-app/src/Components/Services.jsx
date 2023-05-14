@@ -4,15 +4,15 @@ export const Services = () => {
   return (
     <div className="flex xl:px-40 xl:py-10 h-fit xl:h-screen" id="service">
       <div className="w-full flex flex-col justify-evenly">
-        <div className="flex justify-center text-center lg:text-start lg:justify-between gap-80 xl:border-[#BCBCBC] xl:border-b">
+        <div className="flex justify-center text-center items-center lg:text-start lg:justify-between gap-80 xl:border-[#BCBCBC] xl:border-b">
           <div className="flex flex-col gap-2 p-4 xl:p-0">
             <div className="font-semibold text-4xl lg:text-6xl">
-              We can make special
+              Бид онцгой болгож чадна
             </div>
-            <div className="font-bold text-4xl xl:text-7xl">Services</div>
+            <div className="font-bold text-4xl xl:text-7xl">Үйлчилгээ</div>
           </div>
           <div className="font-bold text-7xl hidden lg:block">
-            KEY <span className="text-yellow-500">FEATURE</span>
+            Гол <span className="text-yellow-500">онцлог</span>
           </div>
         </div>
         <div className="flex flex-wrap justify-center font-semibold gap-10 py-7 xl:py-0 text-center">

@@ -69,8 +69,8 @@ export const CalendarComp = () => {
   };
 
   return (
-    <div className="h-screen flex flex-col justify-center items-center ">
-      <div className="p-6 text-4xl font-semibold">Ta өдөрөө сонгоно yy.</div>
+    <div className="h-screen flex flex-col justify-center items-center bg-appointmentImg bg-fixed bg-cover bg-center">
+      <div className="py-12 text-3xl font-semibold">Ta өдөрөө сонгоно yy.</div>
       <div className="flex flex-col gap-3">
         <Calendar
           value={selectedDay}
@@ -81,10 +81,11 @@ export const CalendarComp = () => {
           shouldHighlightWeekends
         />
       </div>
+      {/* Button Section */}
       <div className="flex gap-5 py-4">
         <Link to={"/"}>
           <button className="CancelButton" onClick={Cancel}>
-            Cancel
+            Буцах
           </button>
         </Link>
         <Link to="/appointmentDoctors">
@@ -96,10 +97,11 @@ export const CalendarComp = () => {
               JSON.stringify(appointment)
             )}
           >
-            Next
+            Үргэлжлүүлэх
           </button>
         </Link>
       </div>
+      {/* Button Section */}
     </div>
   );
 };

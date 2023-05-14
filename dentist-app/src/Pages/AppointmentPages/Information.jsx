@@ -6,9 +6,9 @@ export const Information = () => {
   const { setAppointment, appointment } = useContext(DataContext);
 
   return (
-    <div className="h-screen flex flex-col justify-center items-center">
-      <div className="p-6 text-4xl font-semibold">Та нэрээ оруулна уу.</div>
-      <div className="flex flex-col gap-3 items-center">
+    <div className="h-screen flex flex-col justify-center items-center gap-6 bg-appointmentImg bg-fixed bg-cover bg-center">
+      <div className="p-6 text-2xl lg:text-4xl font-semibold">Та нэрээ оруулна уу.</div>
+      <div className="flex flex-col gap-3 items-center rounded-xl bg-white p-4">
         <div className="flex flex-col gap-2">
           <div className="font-bold">Овог</div>
           <input
@@ -38,9 +38,10 @@ export const Information = () => {
           />
         </div>
       </div>
+      {/* Button Section */}
       <div className="flex gap-5 py-4">
         <Link to={"/appointmentHour"}>
-          <button className="CancelButton">Cancel</button>
+          <button className="CancelButton">Буцах</button>
         </Link>
 
         <Link to="/verification">
@@ -56,10 +57,11 @@ export const Information = () => {
               JSON.stringify(appointment)
             )}
           >
-            <div>Next</div>
+            Үргэлжлүүлэх
           </button>
         </Link>
       </div>
+      {/* Button Section */}
     </div>
   );
 };

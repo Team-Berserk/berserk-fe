@@ -8,14 +8,16 @@ export const Doctors = () => {
     useContext(DataContext);
 
   return (
-    <div className="h-screen flex flex-col justify-center items-center overflow-y-scroll">
-      <div className="p-6 text-4xl font-semibold">Та эмчээ сонгоно уу.</div>
-      <div className="flex overflow-x-scroll lg:overflow-auto justify-normal lg:justify-center w-screen gap-10  p-4 mt-24">
+    <div className="h-screen flex flex-col justify-center items-center overflow-y-scroll bg-appointmentImg bg-fixed bg-cover bg-center">
+      <div className="p-6 text-2xl lg:text-4xl font-semibold">
+        Та эмчээ сонгоно уу.
+      </div>
+      <div className="flex overflow-x-scroll lg:overflow-auto justify-normal lg:justify-center w-screen gap-10 p-4">
         {Doctors &&
           Doctors.map((item, index) => {
             return (
-              <div className="border rounded-2xl p-4" key={index}>
-                <div className="w-32 text-center flex flex-col items-center gap-5">
+              <div className="border rounded-lg p-6 bg-white" key={index}>
+                <div className="w-32 text-center flex flex-col items-center gap-6">
                   <img
                     alt="profile"
                     className="w-16"
@@ -56,7 +58,7 @@ export const Doctors = () => {
 
       <div className="flex gap-5 py-4">
         <Link to={"/appointmentDate"}>
-          <button className="CancelButton">Cancel</button>
+          <button className="CancelButton">Буцах</button>
         </Link>
         <Link to="/appointmentHour">
           <button
@@ -67,7 +69,7 @@ export const Doctors = () => {
               JSON.stringify(appointment)
             )}
           >
-            Next
+            Үргэлжлүүлэх
           </button>
         </Link>
       </div>

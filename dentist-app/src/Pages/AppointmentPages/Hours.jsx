@@ -7,9 +7,9 @@ export const Hours = () => {
     useContext(DataContext);
 
   return (
-    <div className="h-screen flex flex-col justify-center items-center">
-       <div className="p-6 text-4xl font-semibold">Ta цагаа сонгоно yy.</div>
-      <div className="flex flex-wrap w-[330px] h-48 overflow-hidden justify-center gap-5">
+    <div className="h-screen flex flex-col justify-center items-center bg-appointmentImg bg-fixed bg-cover bg-center">
+      <div className="p-6 text-4xl font-semibold">Ta цагаа сонгоно yy.</div>
+      <div className="flex flex-wrap w-[330px] h-48 overflow-hidden justify-center gap-5 bg-white">
         {availabletimes.map((item, index) => {
           return (
             <button
@@ -38,9 +38,11 @@ export const Hours = () => {
           );
         })}
       </div>
+
+      {/* Button Section */}
       <div className="flex gap-5 py-4">
         <Link to={"/appointmentDoctors"}>
-          <button className="CancelButton">Cancel</button>
+          <button className="CancelButton">Буцах</button>
         </Link>
 
         <Link to="/appointmentInformation">
@@ -52,10 +54,11 @@ export const Hours = () => {
               JSON.stringify(appointment)
             )}
           >
-            Next
+            Үргэлжлүүлэх
           </button>
         </Link>
       </div>
+      {/* Button Section */}
     </div>
   );
 };
