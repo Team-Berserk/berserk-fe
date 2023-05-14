@@ -1,8 +1,8 @@
-// import clock from "../Assets/footerClock.svg";
-// import calendar from "../Assets/footerCalendar.svg";
-// import map from "../Assets/footerMap.svg";
-// import headset from "../Assets/footerHeadset.svg";
-import facebook from "../Assets/footerFacebook.svg";
+import clock from "../Assets/footerAssets/footerClock.svg";
+import calendar from "../Assets/footerAssets/footerCalendar.svg";
+import map from "../Assets/footerAssets/footerMap.svg";
+import headset from "../Assets/footerAssets/footerHeadset.svg";
+import facebook from "../Assets/footerAssets/footerFacebook.svg";
 import WebLogo from "../Assets/WebLogo.svg";
 
 export const Footer = () => {
@@ -31,7 +31,7 @@ export const Footer = () => {
         <div className="flex justify-center md:flex-row gap-10 py-5 md:p-0 md:items-center">
           <div className="flex flex-col gap-5 w-56">
             <div className="flex gap-2 items-start">
-              {/* <img src={map} alt="map"/> */}
+              <img src={map} alt="map" />
               <div>
                 <div className="text-lg">Xаяг</div>
                 <div>
@@ -41,7 +41,7 @@ export const Footer = () => {
               </div>
             </div>
             <div className="flex gap-2 items-start">
-              {/* <img src={headset} alt="headset"/> */}
+              <img src={headset} alt="headset" />
               <div>
                 <div className="text-lg">Holbogdoh</div>
                 <div>Phone : 9877 1177</div>
@@ -50,7 +50,7 @@ export const Footer = () => {
           </div>
           <div className="flex flex-col gap-12 w-56">
             <div className="flex gap-4 items-start">
-              {/* <img src={clock} alt="clock"/> */}
+              <img src={clock} alt="clock" />
               <div>
                 <div className="text-lg">Schedule</div>
                 <div>Mon-Sat 10pm - 16:00</div>
@@ -60,7 +60,7 @@ export const Footer = () => {
             </div>
             <div>
               <div className="flex gap-2 items-start">
-                {/* <img src={calendar} alt="calendar"/> */}
+                <img src={calendar} alt="calendar" />
                 <div>
                   <div className="text-lg">Appointment</div>
                   <div>Book appointment now!</div>
