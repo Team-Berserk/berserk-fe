@@ -69,14 +69,15 @@ export const CalendarComp = () => {
   };
 
   return (
-    <div className="h-screen flex flex-col justify-center items-center">
+    <div className="h-screen flex flex-col justify-center items-center ">
+      <div className="p-6 text-4xl font-semibold">Ta өдөрөө сонгоно yy.</div>
       <div className="flex flex-col gap-3">
         <Calendar
           value={selectedDay}
           onChange={(date) => onChange(date)}
           disabledDays={disabledDays}
           minimumDate={utils().getToday()}
-          colorPrimary="#516EFF"
+          colorPrimary="#70BBFB"
           shouldHighlightWeekends
         />
       </div>

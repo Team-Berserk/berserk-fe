@@ -7,10 +7,10 @@ export const AboutUs = () => {
         <div className="flex justify-between items-center xl:border-[#BCBCBC] lg:border-b">
           <div className="flex flex-col gap-2 p-4 xl:p-0">
             <div className="font-bold text-4xl xl:text-7xl">
-              WHO <span className="text-yellow-500">WE ARE</span>
+              БИД <span className="text-yellow-500">ХЭН БЭ</span>
             </div>
           </div>
-          <div className="font-bold text-5xl hidden lg:block">Our history</div>
+          <div className="font-bold text-5xl hidden lg:block">Бидний түүх</div>
         </div>
         <div className="flex flex-col md:flex-row justify-around items-center p-8 lg:p-0 gap-5 lg:gap-0">
           <div>

@@ -50,7 +50,7 @@ export const OrderStatus = () => {
             </div>
             <div>appointment order status</div>
           </div>
-          <div className="text-sm font-medium">Check your appointment!</div>
+          <div className="text-sm font-medium">Та мэдээллээ шалгана уу.</div>
         </div>
         <div className="flex flex-wrap justify-center md:flex-row items-center gap-5">
           <div className="w-44 h-24 bg-gray-100 flex items-center flex-col justify-center gap-3 rounded-md">

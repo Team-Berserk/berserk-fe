@@ -7,6 +7,7 @@ export const Information = () => {
 
   return (
     <div className="h-screen flex flex-col justify-center items-center">
+      <div className="p-6 text-4xl font-semibold">Та нэрээ оруулна уу.</div>
       <div className="flex flex-col gap-3 items-center">
         <div className="flex flex-col gap-2">
           <div className="font-bold">Овог</div>
