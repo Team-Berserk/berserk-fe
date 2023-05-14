@@ -2,7 +2,7 @@
 // import calendar from "../Assets/footerCalendar.svg";
 // import map from "../Assets/footerMap.svg";
 // import headset from "../Assets/footerHeadset.svg";
-// import facebook from "../Assets/footerFacebook.svg";
+import facebook from "../Assets/footerFacebook.svg";
 import WebLogo from "../Assets/WebLogo.svg";
 
 export const Footer = () => {
