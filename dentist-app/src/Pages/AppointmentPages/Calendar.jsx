@@ -45,7 +45,6 @@ export const CalendarComp = () => {
       Date: "",
       Hour: "",
       Ownername: "",
-      Doctor: "",
       Surename: "",
       Phonenumber: "",
     });
