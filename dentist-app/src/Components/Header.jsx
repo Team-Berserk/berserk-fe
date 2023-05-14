@@ -31,7 +31,7 @@ export const Header = () => {
   }
 
   return (
-    <div className="flex absolute top-0 z-1 w-screen z-50 bg-white">
+    <div className="flex absolute top-0  w-screen z-50 bg-white border-b">
       <nav className="w-full p-5 lg:flex items-center justify-between mx-0 xl:mx-32">
         <div className="flex justify-between">
           <Link to="/">
@@ -40,7 +40,11 @@ export const Header = () => {
               className="mx-3 w-52 hidden lg:block"
               src={WebLogo}
             />
-            <img alt="Logo" className="mx-3 w-8 block lg:hidden" src={MobaLogo} />
+            <img
+              alt="Logo"
+              className="mx-3 w-8 block lg:hidden"
+              src={MobaLogo}
+            />
           </Link>
           <div className="text-3xl cursor-pointer block lg:hidden ">
             <RxHamburgerMenu name="menu" onClick={Menu} />

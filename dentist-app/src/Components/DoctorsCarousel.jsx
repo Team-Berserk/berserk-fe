@@ -31,7 +31,7 @@ export const DoctorsCarousel = () => {
       className="h-fit md:h-screen flex bg-gray-100 xl:px-40 xl:py-28"
       id="doctors"
     >
-      <div className="w-full flex flex-col justify-evenly">
+      <div className="w-full flex flex-col gap-12 lg:gap-44">
         <div className="flex justify-between items-center md:border-b">
           <div className="flex flex-col gap-2 p-4 xl:p-0">
             <div className="font-semibold text-5xl xl:text-6xl">
@@ -44,7 +44,7 @@ export const DoctorsCarousel = () => {
           </div>
         </div>
         {Doctors ? (
-          <div>
+          <div className="p-6 lg:p-0">
             <Carousel
               responsive={responsive}
               ssr={true}
