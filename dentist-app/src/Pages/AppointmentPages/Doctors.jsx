@@ -16,7 +16,7 @@ export const Doctors = () => {
         {Doctors &&
           Doctors.map((item, index) => {
             return (
-              <div className="border rounded-lg p-6 bg-white" key={index}>
+              <div className="border border-gray-100 rounded-lg p-6 bg-white" key={index}>
                 <div className="w-32 text-center flex flex-col items-center gap-6">
                   <img
                     alt="profile"
@@ -45,7 +45,7 @@ export const Doctors = () => {
                         checkAvailableTimes(appointment.Date, item._id);
                       }}
                     >
-                      Songoh
+                      Сонгох
                     </button>
                   </div>
                 </div>
