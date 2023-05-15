@@ -8,7 +8,7 @@ export const Information = () => {
   return (
     <div className="h-screen flex flex-col justify-center items-center gap-6 bg-appointmentImg bg-fixed bg-cover bg-center">
       <div className="p-6 text-2xl lg:text-4xl font-semibold">Та нэрээ оруулна уу.</div>
-      <div className="flex flex-col gap-3 items-center rounded-xl bg-white p-4">
+      <div className="flex flex-col gap-3 items-center rounded-xl bg-white p-4 border border-gray-100">
         <div className="flex flex-col gap-2">
           <div className="font-bold">Овог</div>
           <input

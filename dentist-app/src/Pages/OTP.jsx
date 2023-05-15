@@ -115,13 +115,13 @@ export const OTP = () => {
                 8
               )} дугаарт мессежээр ирсэн 6 оронтой тоог оруулна yy.`}
             </h2>
-
-            <MuiOtpInput
-              value={otp && otp}
-              onChange={otpValidator}
-              length={6}
-              itemType="number"
-            />
+            <div>
+              <MuiOtpInput
+                value={otp && otp}
+                onChange={otpValidator}
+                length={6}
+              />
+            </div>
           </div>
 
           <div className="flex flex-col items-center">

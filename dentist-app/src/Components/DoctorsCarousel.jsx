@@ -34,10 +34,8 @@ export const DoctorsCarousel = () => {
       <div className="w-full flex flex-col gap-12 lg:gap-44">
         <div className="flex justify-between items-center md:border-b">
           <div className="flex flex-col gap-2 p-4 xl:p-0">
-            <div className="font-semibold text-5xl xl:text-6xl">
-              Мэргэшсэн шүдний
-            </div>
-            <div className="font-bold text-5xl xl:text-7xl">эмч нар</div>
+            <div className="font-semibold text-5xl xl:text-6xl">Манай</div>
+            <div className="font-bold text-5xl xl:text-7xl">хамт олон</div>
           </div>
           <div className="font-bold text-6xl hidden 2xl:block">
             Манай <span className="text-yellow-500">эмч</span> нар
