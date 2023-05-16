@@ -19,23 +19,20 @@ export const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="flex justify-center md:flex-row gap-10 py-5 md:p-0 md:items-center">
-          <div className="flex flex-col gap-5 w-56">
+        <div className="flex justify-center md:flex-row gap-16 py-5 md:p-0 md:items-center">
+          <div className="flex flex-col gap-8 w-56">
             <div className="flex gap-2 items-start">
               <img src={map} alt="map" />
               <div>
-                <div className="text-lg">Xаяг</div>
-                <div>
-                  Khentii Aimag , PEARL DENTAL NYC233 Broadway18th FloorNew
-                  York, NY 10279
-                </div>
+                <div className="text-lg">Xaяг</div>
+                <div>Хэнтий аймаг, Хэрлэн сум, 4p бaг</div>
               </div>
             </div>
             <div className="flex gap-2 items-start w-80">
               <img src={headset} alt="headset" />
               <div>
-                <div className="text-lg">Holbogdoh</div>
-                <div>Утасны дугаар : 9877 1177</div>
+                <div className="text-lg">Холбогдох</div>
+                <div>Утасны дугаар : +976 9877-1177</div>
                 <div>
                   Фэйсбүүк :{" "}
                   <a
@@ -50,14 +47,14 @@ export const Footer = () => {
               </div>
             </div>
           </div>
-          <div className="flex flex-col gap-12 w-56">
+          <div className="flex flex-col gap-8 w-66">
             <div className="flex gap-4 items-start">
               <img src={clock} alt="clock" />
               <div>
-                <div className="text-lg">Schedule</div>
-                <div>Mon-Sat 10pm - 16:00</div>
-                <div>Mon-Sat 10pm - 16:00</div>
-                <div>Mon-Sat 10pm - 16:00</div>
+                <div className="text-lg">Хуваарь</div>
+                <div>Дaвaa-Баасан: 10:00 - 18:00</div>
+                <div>Хагассайн: 12:00 - 18:00</div>
+                <div>Бүтэнсайн: амарна</div>
               </div>
             </div>
             <div>
