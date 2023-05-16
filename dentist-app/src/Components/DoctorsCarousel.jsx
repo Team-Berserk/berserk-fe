@@ -41,7 +41,7 @@ export const DoctorsCarousel = () => {
             Манай <span className="text-yellow-500">эмч</span> нар
           </div>
         </div>
-        {Doctors ? (
+        {!Doctors.length == 0 ? (
           <div className="p-6 lg:p-0">
             <Carousel
               responsive={responsive}
@@ -60,7 +60,7 @@ export const DoctorsCarousel = () => {
           </div>
         ) : (
           <div className="flex justify-center items-center">
-            <div className="animate-spin inline-block w-12 h-12 border-[6px] border-current border-t-transparent text-gray-400 rounded-full">
+            <div className="animate-spin inline-block w-12 h-12 border-[6px] border-current border-t-transparent text-[#70BBFB] rounded-full">
               <span className="sr-only">Loading...</span>
             </div>
           </div>

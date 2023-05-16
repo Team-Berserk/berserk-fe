@@ -79,7 +79,7 @@ export const Header = () => {
               );
             })}
             <Link to="/appointmentDate" onClick={Menu}>
-              <div className="border bg-[#516EFF] hover:bg-[#637DFF] rounded-md p-2 px-3 w-32 h-12 flex items-center justify-center text-white font-semibold">
+              <div className="border bg-[#70BBFB] hover:bg-[#49A7F6] rounded-md p-2 px-3 w-32 h-12 my-3 flex items-center justify-center text-white font-semibold">
                 Цаг авах
               </div>
             </Link>
