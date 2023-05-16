@@ -70,7 +70,7 @@ export const Footer = () => {
         </div>
       </div>
       <div className="text-sm text-gray-400 flex justify-center">
-        ©2023 Soddent Dental Clinic.
+        ©2023 Соддент шүдний эмнэлэг.
       </div>
     </div>
   );
