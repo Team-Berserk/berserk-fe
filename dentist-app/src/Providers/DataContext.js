@@ -7,7 +7,7 @@ export const DataContext = createContext();
 
 export const DataProvider = ({ children }) => {
   const [phoneNumber, setPhoneNumber] = useState("");
-  const [Doctors, setDoctors] = useState(null);
+  const [Doctors, setDoctors] = useState([]);
   const nav = useNavigate();
 
   const [availabletimes, setAvailabletimes] = useState([

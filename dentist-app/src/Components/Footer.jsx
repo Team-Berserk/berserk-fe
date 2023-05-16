@@ -2,7 +2,6 @@ import clock from "../Assets/footerAssets/footerClock.svg";
 import calendar from "../Assets/footerAssets/footerCalendar.svg";
 import map from "../Assets/footerAssets/footerMap.svg";
 import headset from "../Assets/footerAssets/footerHeadset.svg";
-import facebook from "../Assets/footerAssets/footerFacebook.svg";
 import WebLogo from "../Assets/headerAssets/WebLogo.svg";
 
 export const Footer = () => {
@@ -19,14 +18,6 @@ export const Footer = () => {
               үргэлж хамгийн сайнаараа ажиллах болно .
             </div>
           </div>
-          <a
-            href="https://www.facebook.com/profile.php?id=100057076555186"
-            target="_blank"
-          >
-            <div className="my-3 md:m-0">
-              <img alt="facebookImg" src={facebook} className="w-12" />
-            </div>
-          </a>
         </div>
         <div className="flex justify-center md:flex-row gap-10 py-5 md:p-0 md:items-center">
           <div className="flex flex-col gap-5 w-56">
@@ -40,11 +31,22 @@ export const Footer = () => {
                 </div>
               </div>
             </div>
-            <div className="flex gap-2 items-start">
+            <div className="flex gap-2 items-start w-80">
               <img src={headset} alt="headset" />
               <div>
                 <div className="text-lg">Holbogdoh</div>
-                <div>Phone : 9877 1177</div>
+                <div>Утасны дугаар : 9877 1177</div>
+                <div>
+                  Фэйсбүүк :{" "}
+                  <a
+                    className="text-blue-500 underline"
+                    href="https://www.facebook.com/profile.php?id=100057076555186"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Соддент
+                  </a>
+                </div>
               </div>
             </div>
           </div>

@@ -19,7 +19,7 @@
     @apply rounded-md bg-white text-black h-fit md:h-[180px] w-full md:w-[196px] flex flex-col justify-center gap-3 items-center;
   }
   .SpecailsCard {
-    @apply rounded-md bg-[#F8FAFC] text-black h-fit md:h-[240px] w-80 md:w-[284px] flex flex-col justify-center gap-6 items-center border;
+    @apply rounded-md bg-[#F8FAFC] text-black h-[140px] md:h-[240px] w-[138px] md:w-[284px] flex flex-col justify-center gap-6 items-center border;
   }
   .DoctorCard {
     @apply rounded-2xl bg-[#F8FAFC] text-black h-[362px] w-full md:w-80 justify-around items-center border text-lg font-semibold xl:px-40 flex flex-col;

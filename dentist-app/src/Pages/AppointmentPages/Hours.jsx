@@ -9,7 +9,7 @@ export const Hours = () => {
   return (
     <div className="h-screen flex flex-col justify-center items-center bg-appointmentImg bg-fixed bg-cover bg-center">
       <div className="p-6 text-4xl font-semibold">Ta цагаа сонгоно yy.</div>
-      <div className="flex flex-wrap w-[330px] h-48 overflow-hidden justify-center gap-5 bg-white border border-gray-100">
+      <div className="flex flex-wrap w-[330px] h-56 overflow-hidden justify-center gap-3 bg-white border rounded-lg border-gray-100">
         {availabletimes.map((item, index) => {
           return (
             <button
