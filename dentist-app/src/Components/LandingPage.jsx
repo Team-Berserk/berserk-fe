@@ -12,7 +12,7 @@ export const LandingPage = () => {
         <div className="text-4xl lg:text-6xl font-extrabold p-1 text-center lg:text-start">
           Хэнтий аймгийн <span className="text-[#49A7F6]">шүдний</span> эмнэлэг
         </div>
-        <div className="p-1 text-[#696969] font-semibold text-md lg:text-lg text-center lg:text-start w-[650px]">
+        <div className="p-1 text-[#696969] font-semibold text-md lg:text-lg text-center lg:text-start w-80 md:w-[650px]">
           Бид та болон таны гэр бүлийнхний амны хөндийн эрүүл ахуйн төлөө үргэлж
           хамгийн сайнаараа ажиллах болно .
         </div>

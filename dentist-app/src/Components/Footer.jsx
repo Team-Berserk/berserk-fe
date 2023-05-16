@@ -20,15 +20,15 @@ export const Footer = () => {
           </div>
         </div>
         <div className="flex justify-center md:flex-row gap-16 py-5 md:p-0 md:items-center">
-          <div className="flex flex-col gap-8 w-56">
-            <div className="flex gap-2 items-start">
+          <div className="flex flex-col gap-6 w-56">
+            <div className="flex gap-3 items-start">
               <img src={map} alt="map" />
               <div>
                 <div className="text-lg">Xaяг</div>
                 <div>Хэнтий аймаг, Хэрлэн сум, 4p бaг</div>
               </div>
             </div>
-            <div className="flex gap-2 items-start w-80">
+            <div className="flex gap-2 items-start">
               <img src={headset} alt="headset" />
               <div>
                 <div className="text-lg">Холбогдох</div>
@@ -47,7 +47,7 @@ export const Footer = () => {
               </div>
             </div>
           </div>
-          <div className="flex flex-col gap-8 w-66">
+          <div className="flex flex-col gap-12">
             <div className="flex gap-4 items-start">
               <img src={clock} alt="clock" />
               <div>
@@ -61,8 +61,8 @@ export const Footer = () => {
               <div className="flex gap-2 items-start">
                 <img src={calendar} alt="calendar" />
                 <div>
-                  <div className="text-lg">Appointment</div>
-                  <div>Book appointment now!</div>
+                  <div className="text-lg">Цаг авах</div>
+                  <div>Яг одоо цагаа ав!</div>
                 </div>
               </div>
             </div>
