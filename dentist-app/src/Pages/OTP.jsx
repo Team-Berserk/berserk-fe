@@ -126,7 +126,7 @@ export const OTP = () => {
 
           <div className="flex flex-col items-center">
             <div className="flex gap-3">
-              <div>"00:"{`${seconds < 10 ? "0" : ""}` + `${seconds}`}</div>
+              <div>00:{`${seconds < 10 ? "0" : ""}` + `${seconds}`}</div>
             </div>
 
             <button
