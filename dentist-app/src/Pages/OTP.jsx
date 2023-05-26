@@ -104,7 +104,7 @@ export const OTP = () => {
       <div id="recaptcha-container"></div>
       {success ? (
         <div className="flex flex-col justify-between h-96 items-center">
-          <div className="flex flex-col items-center gap-8 w-[340px] lg:w-96 bg-white">
+          <div className="flex flex-col items-center gap-8 w-[340px] lg:w-96 bg-white p-4 rounded-lg">
             <img src={Message} alt="message" className="w-10" />
             <h2 className="text-3xl font-extrabold text-center">
               Утасны дугаар баталгаажуулах
@@ -126,7 +126,7 @@ export const OTP = () => {
 
           <div className="flex flex-col items-center">
             <div className="flex gap-3">
-              <div>00:{`${seconds < 10 ? "0" : ""}` + `${seconds}`}</div>
+              <div>"00:"{`${seconds < 10 ? "0" : ""}` + `${seconds}`}</div>
             </div>
 
             <button
