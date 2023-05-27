@@ -61,8 +61,7 @@ export const CalendarComp = () => {
   const onChange = (date) => {
     setSelectedDay(date);
 
-    setAppointment((prev) => ({
-      ...prev,
+    setAppointment( ({
       Date: TimerChangerFormat(date),
     }));
   };
