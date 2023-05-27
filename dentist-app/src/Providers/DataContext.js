@@ -40,7 +40,6 @@ export const DataProvider = ({ children }) => {
           times[index].possible = false;
         }
       });
-      console.log(times);
       setAvailabletimes(times);
     });
   };
@@ -85,7 +84,6 @@ export const DataProvider = ({ children }) => {
           FuckedUp();
         } else {
           window.localStorage.removeItem("request");
-          console.log(res.data);
           nav("/");
           Confitrm();
           setPhoneNumber("");
@@ -103,7 +101,6 @@ export const DataProvider = ({ children }) => {
 
   const getDoctors = () => {
     instance.get("/doctors").then((res) => {
-      console.log(res.data);
       setDoctors(res.data);
     });
   };
