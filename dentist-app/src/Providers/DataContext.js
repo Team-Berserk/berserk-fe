@@ -10,16 +10,7 @@ export const DataProvider = ({ children }) => {
   const [Doctors, setDoctors] = useState([]);
   const nav = useNavigate();
 
-  const [availabletimes, setAvailabletimes] = useState([
-    { hour: "10:00", possible: true },
-    { hour: "11:00", possible: true },
-    { hour: "12:00", possible: true },
-    { hour: "13:00", possible: true },
-    { hour: "15:00", possible: true },
-    { hour: "16:00", possible: true },
-    { hour: "17:00", possible: true },
-    { hour: "18:00", possible: true },
-  ]);
+  const [availabletimes, setAvailabletimes] = useState(null);
 
   const [appointment, setAppointment] = useState({
     Date: "",
@@ -50,8 +41,8 @@ export const DataProvider = ({ children }) => {
         }
       });
       console.log(times);
+      setAvailabletimes(times);
     });
-    setAvailabletimes(times);
   };
 
   const Confitrm = () => {

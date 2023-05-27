@@ -18,12 +18,15 @@ export const Doctors = () => {
             return (
               <div className="border border-gray-100 rounded-lg p-6 bg-white" key={index}>
                 <div className="w-32 text-center flex flex-col items-center gap-6">
+                <div className="w-fit h-fit rounded-full overflow-hidden">
                   <img
                     alt="profile"
                     className="w-16"
-                    src={Doctor}
+                    src={item.Img}
                     draggable={false}
                   />
+
+                </div>
                   <div className="w-72 flex flex-col">
                     <div>{item.Name}</div>
                     <div className="text-sm font-medium text-gray-500">
@@ -41,7 +44,9 @@ export const Doctors = () => {
                         setAppointment((prev) => ({
                           ...prev,
                           Dentist: item._id,
+                          Hour:null
                         }));
+
                         checkAvailableTimes(appointment.Date, item._id);
                       }}
                     >
