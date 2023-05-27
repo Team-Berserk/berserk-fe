@@ -5,7 +5,18 @@ import { Link } from "react-router-dom";
 export const Hours = () => {
   const { availabletimes, setAppointment, appointment } =
     useContext(DataContext);
-
+  const runfunc = (item, ind) => {
+    console.log();
+    if (!item.possible) {
+      return <div className="OccupiedHour">{item.hour}</div>;
+    } else {
+      if (appointment.Hour !== item.hour) {
+        return <div className="HourButton">{item.hour}</div>;
+      } else {
+        return <div className="ChoosenHour">{item.hour}</div>;
+      }
+    }
+  };
   return (
     <div className="h-screen flex flex-col justify-center items-center bg-appointmentImg bg-fixed bg-cover bg-center">
       <div className="p-6 text-4xl font-semibold">Ta цагаа сонгоно yy.</div>
@@ -15,15 +26,25 @@ export const Hours = () => {
             <button
               key={index}
               onClick={() => {
-                if (!item.possible) return;
+                if (!item.possible) {
+                  console.log(item);
+                  return;
+                }
                 setAppointment((prev) => ({
                   ...prev,
                   Hour: item.hour,
                 }));
               }}
               disabled={!item.possible}
+              className={
+                item.possible
+                  ? appointment.Hour !== item.hour
+                    ? "HourButton h-12"
+                    : "ChoosenHour h-12"
+                  : "OccupiedHour h-12"
+              }
             >
-              <div
+              {/* <div
                 className={
                   item.possible
                     ? appointment.Hour !== item.hour
@@ -32,8 +53,9 @@ export const Hours = () => {
                     : "OccupiedHour"
                 }
               >
-                {item.hour}
-              </div>
+            </div> */}
+              {/* {runfunc(item, index)} */}
+              {item.hour}
             </button>
           );
         })}
