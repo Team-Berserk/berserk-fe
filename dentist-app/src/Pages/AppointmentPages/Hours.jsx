@@ -40,10 +40,14 @@ export const Hours = () => {
     <div className="h-screen flex flex-col justify-center items-center bg-appointmentImg bg-fixed bg-cover bg-center">
       <div className="p-6 text-4xl font-semibold">Ta цагаа сонгоно yy.</div>
       <div className="flex flex-wrap w-[330px] h-68 overflow-hidden justify-center gap-3 bg-white border rounded-lg border-gray-100 p-12">
-        {availabletimes &&
+        {availabletimes ?
           availabletimes.map((item, index) => {
             return <TimeButtons item={item} index={index} />;
-          })}
+          }) : <div className="flex justify-center items-center">
+          <div className="animate-spin inline-block w-12 h-12 border-[6px] border-current border-t-transparent text-[#70BBFB] rounded-full">
+            <span className="sr-only">Loading...</span>
+          </div>
+        </div>}
       </div>
 
       {/* Button Section */}
